@@ -6,33 +6,47 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0px -141px;
-    
-
 }
 .card{
     margin-left: 231px;
     height: 36px;
 }
 .card-body{
-    margin-top: -15px;
+    /* margin-top: -15px; */
+    box-shadow: 1px 1px 20px 2px;
+    padding:0px !important;
 
+}
+.bg-menu{
+    background: rgb(23,162,184);
+    background: linear-gradient(177deg, rgba(23,162,184,1) 33%, rgba(100,161,170,0.6110819327731092) 90%, rgba(157,235,241,1) 100%);
 }
 .app-main__inner{
     margin-top: -60px;
-
 }
 .cover-menu h6{
     cursor: pointer;
    
 }
-.cover-menu h6:hover{
-    background: rgb(10, 10, 10);
+/* .cover-menu h6:hover{
+    background: #00659e;
     color: white;
-   border-radius: 15px;
-   padding: 10px;
-}
+    border-radius: 15px;
+    padding: 10px;
+
+} */
 .iconstyle{
     float: right;
     margin-top: -6px;
     color: black;
+}
+a:hover{
+    text-decoration: none !important;
+    outline: none;
+    border: none;
+    color: honeydew;
+    
+}
+a{
+    margin-top: 5px;
 }

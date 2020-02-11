@@ -1,4 +1,4 @@
-<div >
+<div>
 <div [ngClass]="{
 'closed-sidebar' : globals.toggleSidebar,
 'closed-sidebar-md' : globals.toggleSidebarMobile,
@@ -14,22 +14,23 @@
   class="mt-1 background "> -->
   <div class="mt-1 background "></div>
   <div class="card">
-    <div class="card-body">
+    <div class="card-body bg-menu shadow">
       <div class="row">
         <div class="col-8 d-flex justify-content-between cover-menu">
-          <h6 routerLink="/elements/homepage">Timeline</h6>
-          <h6>About</h6>
-          <h6 routerLink="/elements/friends">Friend</h6>
-          <h6  routerLink="/elements/photos">Photos</h6>
+          <a routerLink="/elements/homepage">Timeline</a>
+          <a routerLink="#">About</a>
+          <a routerLink="/elements/friends">Friend</a>
+          <a  routerLink="/elements/photos">Photos</a>
         </div>
-        <div class="col-4">
 
+        <div class="col-4">
           <a routerLink="/login" class="nav-link  iconstyle"  role="button" > <i class="fa fa-power-off  mr-1 text-success"></i>Logout</a>
         </div>
-      </div>
-     
+
+      </div>     
     </div>
   </div>
+
   <div class="app-main__outer">
     <div class="app-main__inner ">
       <div [@architectUIAnimation]="o.isActivated ? o.activatedRoute : ''">
