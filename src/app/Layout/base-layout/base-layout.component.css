@@ -1,6 +1,6 @@
 .background{
-    height: 230px;
-    width: 879px;
+    height: 330px;
+    /* width: 879px; */
     margin-left: 231px;
     background-image: url(../../../assets/images/students-1807505_1920.jpg);
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@
     background: rgb(10, 10, 10);
     color: white;
    border-radius: 15px;
-   padding: 4px 10px;
+   padding: 10px;
 }
 .iconstyle{
     float: right;
