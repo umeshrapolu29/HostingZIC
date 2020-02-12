@@ -1,11 +1,14 @@
 .background{
-    height: 330px;
-    /* width: 879px; */
-    margin-left: 231px;
-    background-image: url(../../../assets/images/students-1807505_1920.jpg);
+    height: 227px;   
+    margin-left: 300px;
+    background: #8196ff;
+    
+
+    /* background-image: url(../../../assets/images/students-1807505_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0px -141px;
+    background-position: 0px -141px; */ 
+    /* width: 879px; */
 }
 .card{
     margin-left: 231px;
