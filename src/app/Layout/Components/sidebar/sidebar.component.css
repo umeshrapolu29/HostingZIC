@@ -4,7 +4,7 @@ body {
   }
 .app-sidebar{
   /* background-color: #007bff29; */
-  background-color: #25367c;
+  background-color: #1a4879;
   margin-bottom: 10px;
   box-shadow: none;
   width: 300px !important;
@@ -14,7 +14,7 @@ mat-grid-tile:hover{
   /* background: #8196ff; */
   color: #fff;
   border-radius: 7px;
-  background: linear-gradient(145deg, #7487e6 ,#384d9c);
+  background: linear-gradient(145deg, rgb(77, 138, 202) ,#1a4879);
   box-shadow:  16px 16px 32px , 
              -16px -16px 32px ;
   
