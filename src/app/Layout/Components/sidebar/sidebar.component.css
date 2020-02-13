@@ -4,20 +4,21 @@ body {
   }
 .app-sidebar{
   /* background-color: #007bff29; */
-  background-color: #8196ff;
+  background-color: #25367c;
   margin-bottom: 10px;
   box-shadow: none;
   width: 300px !important;
 
 }
 mat-grid-tile:hover{
-  background: #8196ff;
-  box-shadow:  0px 1px 2px 0px;
+  /* background: #8196ff; */
   color: #fff;
   border-radius: 7px;
+  background: linear-gradient(145deg, #7487e6 ,#384d9c);
+  box-shadow:  16px 16px 32px , 
+             -16px -16px 32px ;
   
 }
-
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 24px;
     height: 2px;

@@ -12,7 +12,6 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 
-
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
@@ -142,9 +141,9 @@ import { FrienddetailsComponent } from './DemoPages/Elements/frienddetails/frien
 import { PhotosComponent } from './DemoPages/Elements/photos/photos.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ResetpasswordComponent } from './DemoPages/Elements/resetpassword/resetpassword.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -280,7 +279,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     NgxPaginationModule,
     MatButtonModule,
     MatGridListModule,
-    
+    MatDatepickerModule,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,
@@ -290,6 +289,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
+    MatCardModule,
     
     // Charts
     MatSelectModule,
