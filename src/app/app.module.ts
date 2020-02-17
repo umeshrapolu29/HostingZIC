@@ -10,8 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
-
-
+import {MatButtonModule} from '@angular/material/button';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
@@ -139,11 +138,11 @@ import { FreindrequestComponent } from './DemoPages/Elements/freindrequest/frein
 import { FriendsComponent } from './DemoPages/Elements/friends/friends.component';
 import { FrienddetailsComponent } from './DemoPages/Elements/frienddetails/frienddetails.component';
 import { PhotosComponent } from './DemoPages/Elements/photos/photos.component';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 import { ResetpasswordComponent } from './DemoPages/Elements/resetpassword/resetpassword.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.component';
-
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -259,10 +258,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FreindrequestComponent,
     FriendsComponent,
     FrienddetailsComponent,
-    PhotosComponent,
- 
-    ResetpasswordComponent,
- 
+    PhotosComponent, 
+    ResetpasswordComponent, 
     MessengerComponent, 
   ],
   imports: [
@@ -277,8 +274,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatDialogModule,
     MatInputModule,
     NgxPaginationModule,
-    
-    
+    MatButtonModule,
+    MatGridListModule,
+    MatDatepickerModule,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,
@@ -288,6 +286,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ReactiveFormsModule,
     HttpClientModule,
     MatFormFieldModule,
+    MatCardModule,
     
     // Charts
     MatSelectModule,
