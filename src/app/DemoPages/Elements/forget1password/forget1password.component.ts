@@ -4,6 +4,7 @@ import { HttpClient ,HttpParams} from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import Swal from 'sweetalert2'
 import { routerNgProbeToken } from '@angular/router/src/router_module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forget1password',
@@ -13,7 +14,7 @@ import { routerNgProbeToken } from '@angular/router/src/router_module';
 export class Forget1passwordComponent implements OnInit {
 
 
-  constructor(private _httpclient:HttpClient,private auth:AuthService){ }
+  constructor(private _httpclient:HttpClient,private auth:AuthService,private _router:Router){ }
   forgetdata={
     fmail:''
   }
@@ -29,6 +30,7 @@ export class Forget1passwordComponent implements OnInit {
     payload.append('fmail',this.forgetdata.fmail);
     this.auth.forgetpassword(payload).subscribe(res=>{
       console.log(res);
+      this._router.navigate(['/resetpassword']);
       
       
     })
