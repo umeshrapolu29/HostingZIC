@@ -1,11 +1,12 @@
-.container-fluid{
-    background-image: url('../../assets/images/home-office-1867759_1920.jpg');
+ .container-fluid{
+    /* background-image: url('../../assets/images/home-office-1867759_1920.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
-    /* //background-position: fixed; */
     position: absolute;
     height: 620px;
-
+}
+.RegistrationImg{
+    margin-left: 50px;
 }
 .container{
     padding: 50px;
@@ -13,25 +14,18 @@
 .form{
     margin-top: 50px;
 }
-.card{
- 
-    width: 702px;
-    margin-left: 446px;
-    border: 1px solid;
-    box-shadow: 0 0 7px
-}
-/* .btn-success{
-    margin-right: 13px;
-}
-.btn-primary{
-    margin-left: 622px;
-} */
 .alg{
     margin-left: 517px;
 }
 .h3style{
-    color: black
+    color:#3e2e7b;
 }
 .form-group label{
-    color: black
+    color: black;
+} 
+.title{
+    font-family: 'Berkshire Swash', cursive;
+}
+.line{
+    border:1px solid #8ec9e0;
 }
