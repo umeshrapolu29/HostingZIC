@@ -145,6 +145,10 @@ import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.com
 import {MatCardModule} from '@angular/material/card';
 import{MatSnackBarModule} from '@angular/material';
 
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
+
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -261,7 +265,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FrienddetailsComponent,
     PhotosComponent, 
     ResetpasswordComponent, 
-    MessengerComponent, 
+    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, 
   ],
   imports: [
     BrowserModule,
