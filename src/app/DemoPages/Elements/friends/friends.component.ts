@@ -82,41 +82,42 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     console.log(selected.requestto+"todata")
     this.router.navigate(['/elements/friendsdetails']);
   }
-request(){
-  this.snackbar.open("Request Sent...","OK");
+request(selected:any){
+  this.snackbar.open("Request Sent...","undo",{duration:5000});
   
-}
 
-//   request( selected:any){
-//     const payload = new FormData();
+
+
+    const payload = new FormData();
    
-//     this.p1.nativeElement.innerHTML = "Requested";
-//     this.p1.nativeElement.style.background="green";
-//     this.p1.nativeElement.value=this.value;
-//     console.log(this.value+"value is");
+    this.p1.nativeElement.innerHTML = "Requested";
+    this.p1.nativeElement.style.background="green";
+    this.p1.nativeElement.value=this.value;
+    console.log(this.value+"value is");
  
     
    
 
-//     payload.append('requestfrom',localStorage.getItem('username'));
-//     //payload.append('requestfromname',localStorage.getItem('username'));
-//     payload.append('file',localStorage.getItem('file1'));
-//     //console.log(localStorage.getItem('file'))
+    payload.append('requestfrom',localStorage.getItem('username'));
+    //payload.append('requestfromname',localStorage.getItem('username'));
+    payload.append('file',localStorage.getItem('file1'));
+    //console.log(localStorage.getItem('file'))
 
-//     payload.append("requestto", selected.username);
-//     payload.append("requesttofile", selected.file);
-//     console.log(selected.username)
-//     console.log(selected.file+"file is")
+    payload.append("requestto", selected.username);
+    payload.append("requesttofile", selected.file);
+    console.log(selected.username)
+    console.log(selected.file+"file is")
 
-//     console.log(localStorage.getItem('username'))
+    console.log(localStorage.getItem('username'))
      
   
-//       console.log(this.addfriend);
-//     this.auth.addfriend(payload).subscribe(res=>{
-//       console.log(res);
-//     }
+      console.log(this.addfriend);
+    this.auth.addfriend(payload).subscribe(res=>{
+      console.log(res);
+    }
 
-//     )
+    )
 
-// }
 }
+}
+
