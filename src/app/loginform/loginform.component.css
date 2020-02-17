@@ -19,10 +19,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 750px;
-    margin-left: 108px;
-
-    
+    margin-left: 108px;    
 }
+
 .logImg{
     display: flex;
     text-align: end;
@@ -53,7 +52,8 @@ mat-form-field-infix{
 width: 290px !important;
 }
 .cardstyle{
-    background-image: url('/src/assets/images/login-bg.png');
+    /* background-image: url('/src/assets/images/login-bg.png'); */
+    background-color: #8bb0fe;
     height: 150px;
     /* background: #81a9fe; */
     padding: 40px 20px;

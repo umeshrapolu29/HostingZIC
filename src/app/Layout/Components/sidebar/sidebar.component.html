@@ -1,19 +1,14 @@
 <div class="" [class]="'app-sidebar sidebar-shadow ' + (config$ | async).sidebarTheme" >   
 
   <div class="imagebackground mt-3">
-      <img  src="{{file}}" alt="OCR"    
+      <img  src="{{file}}" alt="User"    
        class="rounded ">
        <div>
         <h2 class="namestyle mt-2 mb-0">{{name}}</h2>
-        <h6><i class="fas fa-user-tie mr-2"></i>HR Operations</h6>
+        <h6><i class="fas fa-user-tie mr-2 mt-2"></i>HR Operations</h6>
     </div>
     <hr>
-  </div> 
- 
-
-  
-  
-    
+  </div>  
 
   <div (mouseover)="sidebarHover()"
   (mouseout)="sidebarHover()" class="app-sidebar-content" style=" background-color: white;">
@@ -28,7 +23,7 @@
             
               
                 <nav class="nav flex-column menuItems">
-                    <a class="nav-link active" routerLink="/elements/homepage"><i class="far fa-compass fa-fw"></i>Home</a>
+                    <a class="nav-link active mt-2" routerLink="/elements/homepage"><i class="far fa-compass fa-fw"></i>Home</a>
                     <a class="nav-link" routerLink="/elements/friends"><i class="fas fa-users fa-fw"></i>Connections</a>
                     <a class="nav-link" routerLink="/elements/photos" ><i class="far fa-images fa-fw"></i>Gallery</a>
                     <a class="nav-link" routerLink="/elements/freindrequests"><i class="fas fa-handshake fa-fw"></i>Invitations<span class="badge badge-info float-right mt-1">{{Arraylength}}</span></a>
