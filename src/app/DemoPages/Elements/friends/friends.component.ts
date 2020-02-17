@@ -4,6 +4,7 @@ import { HttpClient ,HttpParams} from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {  Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -30,6 +31,9 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
   constructor(private _httpclient:HttpClient,private auth:AuthService,private router:Router) { }
 
   ngOnInit() {
+    var date=new Date();
+    console.log(date);
+    
     const payload = new FormData();
     payload.append('requestto',localStorage.getItem('username'));
     console.log(localStorage.getItem('username'))

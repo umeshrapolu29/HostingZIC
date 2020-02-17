@@ -1,8 +1,11 @@
+
 <section class="container-fluid">
 <div class="container">
-  <div class="card">
+  <div class="row">
+  <div class="col-6 card line">
     <div class="card-body">
-      <h3 class="text-center h3style">REGISTRATIONFORM</h3>
+      <h3 class="text-center title h3style">Registration Form</h3>
+      <hr class="line">
       <form class="form">
         <div class="row">
           <div class="col">
@@ -46,13 +49,23 @@
             </div>
           </div>
         </div>
-        <div class="alg">
+        <!-- <div class="">
           <button type="button" class="btn btn-success  mr-2" (click)="register()">Submit</button>
           <button type="button" class="btn btn-primary  " [routerLink]="['/login']">Login</button>
-        </div>
+        </div> -->
+
+        <button type="submit" (click)="register()"
+        routerLinkActive="router-link-active mr-2" mat-stroked-button>Submit</button>
+        <button type="button" class="ml-4" [routerLink]="['/login']" mat-stroked-button color="primary">Login</button>
+
       </form>
    
     </div>
   </div>
+
+  <div class="col-6">
+    <img src="../../assets/images/reg-img.png" height="450" class="RegistrationImg">
+  </div>
+</div>
 </div>
 </section>
