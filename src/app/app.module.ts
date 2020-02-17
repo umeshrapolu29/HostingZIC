@@ -11,7 +11,6 @@ import {LoadingBarRouterModule} from '@ngx-loading-bar/router';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
@@ -259,10 +258,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FreindrequestComponent,
     FriendsComponent,
     FrienddetailsComponent,
-    PhotosComponent,
- 
-    ResetpasswordComponent,
- 
+    PhotosComponent, 
+    ResetpasswordComponent, 
     MessengerComponent, 
   ],
   imports: [

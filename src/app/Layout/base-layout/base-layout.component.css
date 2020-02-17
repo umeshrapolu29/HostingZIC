@@ -44,3 +44,11 @@ a:hover{
 a{
     margin-top: 5px;
 }
+.layout{
+    padding: 2rem;
+    width: 60%;
+    margin-left: 177px;
+    margin-top: 150px;
+    box-shadow: 2px 3px 2px 0px;
+    background: #23568c;
+}
