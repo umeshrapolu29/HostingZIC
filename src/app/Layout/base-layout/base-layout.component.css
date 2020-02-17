@@ -1,18 +1,21 @@
 .background{
-    height: 330px;
-    /* width: 879px; */
-    margin-left: 231px;
-    background-image: url(../../../assets/images/students-1807505_1920.jpg);
+    height: 227px;   
+    margin-left: 300px;
+   background: #1a4879;
+    /*  background: linear-gradient(45deg, rgba(37,54,124,1) 37%, rgba(56,77,156,1) 55%); */
+    /* background: rgb(37,54,124);
+    background: linear-gradient(162deg, rgba(37,54,124,1) 34%, rgba(56,77,156,1) 55%); */
+    /* background-image: url(../../../assets/images/students-1807505_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0px -141px;
+    background-position: 0px -141px; */ 
+    /* width: 879px; */
 }
 .card{
     margin-left: 231px;
     height: 36px;
 }
 .card-body{
-    /* margin-top: -15px; */
     box-shadow: 1px 1px 20px 2px;
     padding:0px !important;
 
@@ -21,20 +24,11 @@
     background: rgb(23,162,184);
     background: linear-gradient(177deg, rgba(23,162,184,1) 33%, rgba(100,161,170,0.6110819327731092) 90%, rgba(157,235,241,1) 100%);
 }
-.app-main__inner{
-    margin-top: -60px;
-}
+
 .cover-menu h6{
     cursor: pointer;
    
 }
-/* .cover-menu h6:hover{
-    background: #00659e;
-    color: white;
-    border-radius: 15px;
-    padding: 10px;
-
-} */
 .iconstyle{
     float: right;
     margin-top: -6px;
@@ -49,4 +43,12 @@ a:hover{
 }
 a{
     margin-top: 5px;
+}
+.layout{
+    padding: 2rem;
+    width: 60%;
+    margin-left: 177px;
+    margin-top: 150px;
+    box-shadow: 2px 3px 2px 0px;
+    background: #23568c;
 }

@@ -1,12 +1,13 @@
 
  <div class="container-fluid">
   <div class="container">
+
     <div class="row main">
       <div class="col-md-6">
         <img src="../../assets/images/login image.jpg" height="450" class="logImg">
       </div>
       <div class="col-md-6 colstyle">
-        <div class="card mx-auto">
+        <div class="card mx-auto shadow">
           <div class="card-body p-0">
             <div class="cardstyle">
               <h6>Welcome to </h6>
@@ -16,21 +17,22 @@
               <h5 class="text-center">Login</h5>
               <hr>
               <form>
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="example-full-width d-block">
                   <input matInput placeholder="username" name="Username" [(ngModel)]="logindata.username"
                     autocomplete="off">
                 </mat-form-field>
 
-                <mat-form-field class="example-full-width">
+                <mat-form-field class="example-full-width d-block">
                   <input type="password" matInput placeholder="password" name="password"
                     [(ngModel)]="logindata.password">
                 </mat-form-field>
 
-                <div class="mt-2 d-flex justify-content-end">
-                  <button type="button" class="btn btn-success mr-2" (click)="login()"
-                    routerLinkActive="router-link-active">Submit</button>
-                  <button type="button" class="btn btn-primary" [routerLink]="['/registration']">Register</button>
+                <div class="mt-4 d-flex justify-content-end">
+                  <button type="submit" (click)="login()"
+                  routerLinkActive="router-link-active" mat-stroked-button>Submit</button>
+                  <button type="button" class="ml-4" [routerLink]="['/registration']" mat-stroked-button color="primary">Register</button>
                 </div>
+                
               </form>
             </div>
           </div>

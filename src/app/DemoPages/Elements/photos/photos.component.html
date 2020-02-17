@@ -1,6 +1,7 @@
-<div class="container">
-
-    <div class="card mb-2" *ngFor='let hero of array1'>
+<div class="bg ">
+<div class="container d-flex text-center ">
+<div class="row">
+    <!-- <div class="card mb-2" *ngFor='let hero of array1'>
         <div class="card-body" >
       
             <div class="d-flex"> <img src="{{hero.file}}" class="rounded-circle" width="60px" height="60px">    <p class="ptag">{{hero.comment|uppercase}}</p></div>
@@ -12,6 +13,27 @@
            <p>comments</p>
          </div>
         </div>
-      </div>
+      </div> -->
 
+      <mat-card class="example-card m-4" *ngFor='let hero of array1'>
+        <div class="h-50 ">
+        <mat-card-header>       
+          <img mat-card-avatar src="{{hero.file}}" >          
+          <mat-card-title>Asma</mat-card-title>
+          <mat-card-subtitle> HR Operations</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{hero.postimg}}" alt="User" height="190px" width="250px">
+        <mat-card-content>
+          <p class="font-weight-bolder">
+            {{hero.comment|uppercase}}      
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>{{hero.likes}}LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+        </div>
+      </mat-card>
+    </div>
+</div>
 </div>
