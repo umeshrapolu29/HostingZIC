@@ -1,4 +1,7 @@
 
+*{
+    transition: all 0.5s ease-in-out;
+}
 .card{
     width: 100%;
     -moz-box-shadow: 0 2px 2px -1px #888;

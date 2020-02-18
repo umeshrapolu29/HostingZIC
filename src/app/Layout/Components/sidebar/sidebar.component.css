@@ -85,3 +85,29 @@ font-size: 12px;
 margin-bottom: 0px;
 
  }
+ .names .dept{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   /* flex-direction: column; */
+ }
+ .names .dept h6{
+   margin-left: 20px;
+   margin-bottom: 0;
+ }
+ .names .dept i{
+   background-color: #4b7eaf;
+   /* font-size: 20px; */
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 10px;
+   border-radius: 50px !important;
+ }
+ .dept{
+  background-color: #2a629c;
+  padding: 7px 20px;
+  border-radius: 50px;
+  text-align: center;
+ }
