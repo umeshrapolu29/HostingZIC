@@ -36,7 +36,7 @@ import {  Router } from '@angular/router';
   ]
 })
 
-export class BaseLayoutComponent {
+export class BaseLayoutComponent {  
 
   @select('config') public config$: Observable<any>;
 

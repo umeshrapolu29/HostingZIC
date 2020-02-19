@@ -9,7 +9,7 @@ ul.timeline:before {
     position: absolute;
     left: 29px;
     width: 2px;
-    height: 150%;
+    height: 140%;
     z-index: 400;
 }
 ul.timeline > li {
@@ -39,17 +39,22 @@ ul.timeline > li:before {
 }
 
 .background{
-    width: 100px;
-    height: 100px;
-    margin-top: 70px;
+    width: 150px;
+    height: 150px;
+    margin-top: 39px;
 }
 .name{
     font-size: 22px;
     cursor: pointer;
     color: #1a4879;
 }
-h4{
+h3{
     margin-left: 125px;
+    color: #1a4879;
+}
+.row{
+    box-shadow:1px 1px 5px -3px;
+    width:900px;
 }
 /* .background{
     width: 151px;
