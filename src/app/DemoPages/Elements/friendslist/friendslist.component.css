@@ -1,0 +1,41 @@
+.card1 {
+    width: 300px !important;
+}
+.profile{
+    position: absolute;
+    top: 10%;
+    left: 20%;    
+    transform: translate(-50%, -50%);
+}
+.layout{
+    position: relative;
+
+}
+.descri{
+    margin-top:34px;
+}
+.dp-name{
+    margin-left: 35%;
+}
+a{
+    margin-left: 45px !important;
+}
+/* .m-card{
+
+        position: relative;
+        width: 30%;
+        height: 300px;
+        padding: 1em 1.5em;
+        margin: 2em auto;
+        color: #fff;
+        background: #97C02F;
+      }
+      .m-card:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-width: 0 16px 16px 0;
+        border-style: solid;
+        border-color: #658E15 #fff;
+      } */

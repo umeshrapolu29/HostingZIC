@@ -37,9 +37,7 @@ export class FrienddetailsComponent implements OnInit {
       console.log(res);
       this.array=res;
       this.array3=this.array.data;
-      console.log(this.array3)
-      
-    
+      console.log(this.array3);    
       console.log("details");
     })
   }

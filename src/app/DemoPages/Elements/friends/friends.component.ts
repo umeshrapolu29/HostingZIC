@@ -3,6 +3,10 @@ import{AuthService} from '../../../auth.service';
 import { HttpClient ,HttpParams} from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {  Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material';
+
+
+
 
 @Component({
   selector: 'app-friends',
@@ -27,9 +31,14 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
   id:localStorage.getItem('id')
 }
 
-  constructor(private _httpclient:HttpClient,private auth:AuthService,private router:Router) { }
+  constructor( private snackbar:MatSnackBar, private _httpclient:HttpClient,private auth:AuthService,private router:Router) { }
 
   ngOnInit() {
+   
+
+    var date=new Date();
+    console.log(date);
+    
     const payload = new FormData();
     payload.append('requestto',localStorage.getItem('username'));
     console.log(localStorage.getItem('username'))
@@ -73,7 +82,12 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     console.log(selected.requestto+"todata")
     this.router.navigate(['/elements/friendsdetails']);
   }
-  request( selected:any){
+request(selected:any){
+  this.snackbar.open("Request Sent...","undo",{duration:5000});
+  
+
+
+
     const payload = new FormData();
    
     this.p1.nativeElement.innerHTML = "Requested";
@@ -81,7 +95,7 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     this.p1.nativeElement.value=this.value;
     console.log(this.value+"value is");
  
-
+    
    
 
     payload.append('requestfrom',localStorage.getItem('username'));
@@ -106,3 +120,4 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
 
 }
 }
+
