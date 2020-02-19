@@ -77,6 +77,7 @@ import { ResetpasswordComponent } from './DemoPages/Elements/resetpassword/reset
 import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
+import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
 
 
 
@@ -127,6 +128,7 @@ const routes: Routes = [
       {path:'elements/friendsdetails',component:FrienddetailsComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/photos',component:PhotosComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/messenger',component:MessengerComponent,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/friendslist',component:FriendslistComponent,data:{extraParameter:'elementsmenu'}},
 
 
 

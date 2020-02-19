@@ -1,0 +1,19 @@
+.card1 {
+    height: 144px !important;
+    width: 200px !important;
+}
+.profile{
+    position: absolute;
+    top: -54px;
+    left: 40px;    
+}
+.layout{
+    position: relative;
+
+}
+.descri{
+    margin-top:34px;
+}
+a{
+    margin-left: 45px !important;
+}

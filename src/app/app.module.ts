@@ -148,6 +148,8 @@ import{MatSnackBarModule} from '@angular/material';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
 
+import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
+
 
 
 
@@ -265,7 +267,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FrienddetailsComponent,
     PhotosComponent, 
     ResetpasswordComponent, 
-    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, 
+    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, 
   ],
   imports: [
     BrowserModule,
