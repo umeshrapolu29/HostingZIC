@@ -1,10 +1,10 @@
 <div class="container mt-5">
   <div class="row">
-<mat-card class="m-card card1 mx-3">
+<mat-card class="m-card card1 m-3" *ngFor="let hero of array1">
 <div class="d-flex dp">
-  <img class="profile rounded border shadow" src='../../../assets/images/children.jpg' height="80px" width="80px" alt="user" />
+  <img class="profile rounded border shadow" src="{{hero.file}}" height="80px" width="80px" alt="user" />
     <div class="dp-name">
-      <h4 class="m-0">Asma Misbah</h4>
+      <h4 class="m-0">{{hero.requestfrom}}</h4>
       <p>HR Operations</p>
     </div>
 </div>
@@ -12,8 +12,20 @@
 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime ipsa dolores sed atque accusantium!</p>
 <button mat-raised-button color="primary">View More</button>
 </mat-card>
+<mat-card class="m-card card1 m-3" *ngFor='let hero of array3'>
+  <div class="d-flex dp">
+    <img class="profile rounded border shadow" src="{{hero.requesttofile}}" height="80px" width="80px" alt="user" />
+      <div class="dp-name">
+        <h4 class="m-0">{{hero.requestto}}</h4>
+        <p>HR Operations</p>
+      </div>
+  </div>
+  <h5>Brief:</h5>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime ipsa dolores sed atque accusantium!</p>
+  <button mat-raised-button color="primary">View More</button>
+  </mat-card>
 
-<mat-card class="m-card card1 mx-3">
+<!-- <mat-card class="m-card card1 mx-3">
   <div class="d-flex dp">
     <img class="profile rounded border shadow" src='../../../assets/images/home-office-1207834_1920.jpg' height="80px" width="80px" alt="user" />
       <div class="dp-name">
@@ -24,9 +36,9 @@
   <h5>Brief:</h5>
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime ipsa dolores sed atque accusantium!</p>
   <button mat-raised-button color="primary">View More</button>
-  </mat-card>
+  </mat-card> -->
 
-  <mat-card class="m-card card1 mx-3">
+  <!-- <mat-card class="m-card card1 mx-3">
     <div class="d-flex dp">
       <img class="profile rounded border shadow" src='../../../assets/images/Communication.jpg' height="80px" width="80px" alt="user" />
         <div class="dp-name">
@@ -37,6 +49,6 @@
     <h5>Brief:</h5>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime ipsa dolores sed atque accusantium!</p>
     <button mat-raised-button color="primary">View More</button>
-    </mat-card>
+    </mat-card> -->
 </div>
 </div>

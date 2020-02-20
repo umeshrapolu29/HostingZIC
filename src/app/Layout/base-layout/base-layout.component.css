@@ -50,7 +50,7 @@ a{
     width: 70%;
     margin-left: 40px;
     margin-top: 150px;
-    box-shadow: 2px 3px 2px 0px;
+    /* box-shadow: 2px 3px 2px 0px; */
     background: #23568c;
    z-index: 99;
 }
@@ -60,3 +60,11 @@ a{
     float: right;
     cursor: pointer;
 }
+.badge{
+    border-radius: 50%;
+    font-size: 66%;
+    }
+    .badge-light{
+        color: #fff;
+        background-color: #ff5722;
+    }

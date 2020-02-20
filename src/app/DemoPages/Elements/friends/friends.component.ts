@@ -84,16 +84,17 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
   }
 request(selected:any){
   this.snackbar.open("Request Sent...","undo",{duration:5000});
+  console.log("inside hello");
   
 
 
 
     const payload = new FormData();
    
-    this.p1.nativeElement.innerHTML = "Requested";
-    this.p1.nativeElement.style.background="green";
-    this.p1.nativeElement.value=this.value;
-    console.log(this.value+"value is");
+    // this.p1.nativeElement.innerHTML = "Requested";
+    // this.p1.nativeElement.style.background="green";
+    // this.p1.nativeElement.value=this.value;
+    // console.log(this.value+"value is");
  
     
    
@@ -114,6 +115,7 @@ request(selected:any){
       console.log(this.addfriend);
     this.auth.addfriend(payload).subscribe(res=>{
       console.log(res);
+      console.log("inside res is")
     }
 
     )

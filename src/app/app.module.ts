@@ -143,6 +143,7 @@ import { ResetpasswordComponent } from './DemoPages/Elements/resetpassword/reset
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatBadgeModule} from '@angular/material/badge';
 import{MatSnackBarModule} from '@angular/material';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
@@ -286,6 +287,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatDatepickerModule,
     MatSnackBarModule,
     MatBottomSheetModule,
+    MatBadgeModule,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,
