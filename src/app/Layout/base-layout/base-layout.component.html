@@ -15,7 +15,7 @@
 
   <div class=" background">    
     <div class="logout"> 
-      <i class="far fa-envelope m-4"></i>
+      <i mat-raised-button (click)="openMessageBottomSheet()"class="far fa-envelope m-4"></i>
       <i mat-raised-button (click)="openBottomSheet()" class="far fa-bell mx-2 my-4"></i>
       <i class="fas fa-power-off m-4" (click)="logoutUser()"></i>
      

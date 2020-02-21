@@ -143,12 +143,15 @@ import { ResetpasswordComponent } from './DemoPages/Elements/resetpassword/reset
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.component';
 import {MatCardModule} from '@angular/material/card';
-import{MatSnackBarModule} from '@angular/material';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import{MatSnackBarModule, MatBottomSheetModule, MatListModule} from '@angular/material';
+// import {MatBottomSheetModule, MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
 
 import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
+import { ToBottomSheetComponent } from './to-bottom-sheet/to-bottom-sheet.component';
+import { MessageBottomSheetComponent } from './message-bottom-sheet/message-bottom-sheet.component';
+import { LogoutDialogueComponent } from './logout-dialogue/logout-dialogue.component';
 
 
 
@@ -267,8 +270,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FrienddetailsComponent,
     PhotosComponent, 
     ResetpasswordComponent, 
-    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, 
+    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, ToBottomSheetComponent, MessageBottomSheetComponent, LogoutDialogueComponent, 
   ],
+  entryComponents:[ToBottomSheetComponent,MessageBottomSheetComponent,LogoutDialogueComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -285,7 +289,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatGridListModule,
     MatDatepickerModule,
     MatSnackBarModule,
-    MatBottomSheetModule,
+     MatBottomSheetModule,
+     
+    
+    // MatBottomSheetRef,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,
@@ -296,6 +303,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     MatFormFieldModule,
     MatCardModule,
+    MatListModule,
     
     // Charts
     MatSelectModule,
