@@ -1,5 +1,12 @@
 .background{
     width: 73px;
     height: 65px;
-    border: 2px solid;
+    border: 1px solid #4b7eaf;
+}
+.mat-raised-button.mat-warn {
+    color: red;
+    background-color: #ff000024;
+}
+.mat-raised-button.mat-primary {
+    background-color: #23568c;
 }

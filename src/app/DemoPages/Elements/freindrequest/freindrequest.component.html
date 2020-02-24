@@ -7,14 +7,16 @@
           <div class="row">
              <div class="col-4">
           <img src="{{hero.file}}" class="background"></div>
-          <div class="col-8"><h4>{{hero. requestfrom}}</h4></div>
+          <div class="col-8 mt-1"><h4>{{hero. requestfrom}}</h4>
+          <p>Web Developer</p>
+          </div>
           </div>
         </div>
 
        
         <div class="col-6 mt-3">
-            <button type="button" class="btn btn-primary mr-3" (click)="requeststatus(hero)" value="Accepeted" #id1>Confirm</button>
-            <button type="button" class="btn btn-secondary" (click)="requeststatusdelete(hero)" #id2>Delete Request</button>
+            <button type="button" mat-raised-button color="primary" class="mr-4" (click)="requeststatus(hero)" value="Accepeted" #id1>Confirm</button>
+            <button type="button" mat-raised-button color="warn" (click)="requeststatusdelete(hero)" #id2>Delete</button>
         </div>
       </div>
       

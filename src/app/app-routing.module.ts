@@ -78,6 +78,7 @@ import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.com
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
 import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
+import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
 
 
 
@@ -129,6 +130,7 @@ const routes: Routes = [
       {path:'elements/photos',component:PhotosComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/messenger',component:MessengerComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/friendslist',component:FriendslistComponent,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/viewdetails-bottom',component:ViewDetailsBottomsheetComponent,data:{extraParameter:'elementsmenu'}},
 
 
 

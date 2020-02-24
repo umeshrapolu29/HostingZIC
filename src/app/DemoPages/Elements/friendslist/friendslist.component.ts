@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import{AuthService} from '../../../auth.service';
 import { HttpClient ,HttpParams} from '@angular/common/http';
 import {  Router } from '@angular/router';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar, MatBottomSheet} from '@angular/material';
+import { ViewDetailsBottomsheetComponent } from 'src/app/DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
 
 @Component({
   selector: 'app-friendslist',
@@ -11,8 +12,8 @@ import {MatSnackBar} from '@angular/material';
 })
 export class FriendslistComponent implements OnInit {
 
-  constructor( private snackbar:MatSnackBar, private _httpclient:HttpClient,private auth:AuthService) { }
-  array:any;
+  constructor(private bottomSheet: MatBottomSheet, private snackbar:MatSnackBar, private _httpclient:HttpClient,private auth:AuthService,private router:Router) { }
+ array:any;
  array1:any;
  array2:any;
  array3:any;
@@ -46,6 +47,20 @@ export class FriendslistComponent implements OnInit {
     
     })
    
+  }
+  viewdetails(selected:any){
+    console.log("Selected item Id: ",selected.requestfromname);
+    localStorage.setItem('frdienddetailsname',selected.requestfrom)
+    console.log(selected.requestfrom+"fromdata")
+    // this.router.navigate(['/elements/friendsdetails']);
+    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+  }
+  viewdetails1(selected:any){
+    console.log("Selected item Id: ",selected.requestfromname);
+    localStorage.setItem('frdienddetailsname',selected.requestto)
+    console.log(selected.requestto+"todata")
+    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+    //  this.router.navigate(['/elements/friendsdetails']);
   }
 
 }
