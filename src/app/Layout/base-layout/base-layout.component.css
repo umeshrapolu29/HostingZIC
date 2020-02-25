@@ -9,6 +9,27 @@
     top: 45px;
     left:40px;
 }
+.headings h5{
+  font-weight: lighter;
+  font-size: 2rem;
+  color: #FFBF00;
+}
+.headings p{
+  font-weight: lighter;
+}
+.clock{
+  font-size: 2rem;
+  font-weight: lighter;
+}
+.clock .ext{
+  font-size: 1rem;
+  font-weight: lighter;
+}
+.clock .date{
+  font-size:15px;
+  font-weight: lighter;
+  color: #FFBF00;
+}
 
 .card{
     margin-left: 231px;
@@ -45,7 +66,7 @@ a{
 }
 .layout{
     position:absolute;
-    padding: 2rem;
+    padding: 2r em;
     width: 90%;
     margin-left:23px;
     margin-top: 150px;

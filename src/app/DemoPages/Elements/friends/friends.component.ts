@@ -3,7 +3,9 @@ import{AuthService} from '../../../auth.service';
 import { HttpClient ,HttpParams} from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {  Router } from '@angular/router';
-import {MatSnackBar} from '@angular/material';
+// import {MatSnackBar} from '@angular/material';
+import {MatSnackBar, MatBottomSheet} from '@angular/material';
+import { ViewDetailsBottomsheetComponent } from 'src/app/DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
 
 
 
@@ -31,7 +33,7 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
   id:localStorage.getItem('id')
 }
 
-  constructor( private snackbar:MatSnackBar, private _httpclient:HttpClient,private auth:AuthService,private router:Router) { }
+  constructor( private snackbar:MatSnackBar, private _httpclient:HttpClient,private auth:AuthService,private router:Router,private bottomSheet: MatBottomSheet, ) { }
 
   ngOnInit() {
    
@@ -75,23 +77,21 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     console.log("Selected item Id: ",selected.requestfromname);
     localStorage.setItem('frdienddetailsname',selected.username)
     console.log(selected.username+"fromdata")
-    this.router.navigate(['/elements/friendsdetails']);
+    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+    // this.router.navigate(['/elements/friendsdetails']);
+  
   }
   viewdetails1(selected:any){
     console.log("Selected item Id: ",selected.requestfromname);
     localStorage.setItem('frdienddetailsname',selected.requestto)
     console.log(selected.requestto+"todata")
-    this.router.navigate(['/elements/friendsdetails']);
+    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+    // this.router.navigate(['/elements/friendsdetails']);
   }
 request(selected:any){
   this.snackbar.open("Request Sent.","OK",{duration:5000, panelClass: ['blue-snackbar']});
   console.log("inside hello");
-  
-
-
-
-    const payload = new FormData();
-   
+    const payload = new FormData();   
     // this.p1.nativeElement.innerHTML = "Requested";
     // this.p1.nativeElement.style.background="green";
     // this.p1.nativeElement.value=this.value;

@@ -1,10 +1,7 @@
 <div class="container-fluid">
   <div class="row mt-4">
     <div class="col-6 border col-1">
-
-
     </div>
-
     <div class="col-6">
       <div class="border p-3 bg-white rounded">
         <h5 class="text-primary text-center">Send a post Here</h5>
@@ -16,14 +13,13 @@
           <br>
           <mat-form-field class="example-full-width mt-3">
             <mat-label>Leave a comment</mat-label>
-            <textarea matInput placeholder="Type..."></textarea>
+            <textarea matInput placeholder="Type..." name="comment"
+            [(ngModel)]="postingData.comment" ></textarea>
           </mat-form-field>
-      <button type="submit" mat-raised-button color="primary">Post</button>
-
+         <button type="submit" (click)="postingdata()" mat-raised-button color="primary">Post</button>
         </form>
       </div>
     </div>
-
   </div>
 </div>
 
