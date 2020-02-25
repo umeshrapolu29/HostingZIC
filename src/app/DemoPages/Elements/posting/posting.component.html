@@ -1,38 +1,52 @@
 <div class="container-fluid">
-
-
-
-    
-          <div class="row">
-
-            <div class="col "></div>
-            <div class="col sty1">
-        
-          <h4 class="text-center sty3">Leave Comment</h4>
-          
-         
-            <div class="sty2">    
-          <form class="form">
-              <div class="form-group">
-                  <label for="pwd" style="color: white;"> Photo:</label>
-                  <input type="file" class="form-control-file" id="Email" placeholder=" Confirmpassword" (change)="fileChangeEvent($event)" #fileInput>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1" style="color: white;">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"  [(ngModel)]="postingData.comment"></textarea>
-                  </div>
-
-                  <div><button type="button" class="btn btn-success" (click)="postingdata()">Submit</button></div>
-          </form>
-        </div> 
-        </div>
-       
-           
-
-    
-
-     
+  <div class="row mt-4">
+    <div class="col-6 border col-1">
 
 
     </div>
 
+    <div class="col-6">
+      <div class="border p-3 bg-white rounded">
+        <h5 class="text-primary text-center">Send a post Here</h5>
+        <hr>
+        <p>Post Details</p>
+        <form class="example-form">
+          <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+          <input (change)="onFileSelected()" #fileInput type="file" id="file">
+          <br>
+          <mat-form-field class="example-full-width mt-3">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Type..."></textarea>
+          </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Post</button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col "></div>
+    <div class="col sty1">
+      <h4 class="text-center sty3">Leave Comment</h4>
+      <div class="sty2">
+        <form class="form">
+          <div class="form-group">
+            <label for="pwd" style="color: white;"> Photo:</label>
+            <input type="file" class="form-control-file" id="Email" placeholder=" Confirmpassword"
+              (change)="fileChangeEvent($event)" #fileInput>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" style="color: white;">Example textarea</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"
+              [(ngModel)]="postingData.comment"></textarea>
+          </div>
+          <div><button type="button" class="btn btn-success" (click)="postingdata()">Submit</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div> -->

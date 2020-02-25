@@ -71,9 +71,10 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     })
   }
   viewdetails(selected:any){
+    console.log("hellooooo");
     console.log("Selected item Id: ",selected.requestfromname);
-    localStorage.setItem('frdienddetailsname',selected.requestfrom)
-    console.log(selected.requestfrom+"fromdata")
+    localStorage.setItem('frdienddetailsname',selected.username)
+    console.log(selected.username+"fromdata")
     this.router.navigate(['/elements/friendsdetails']);
   }
   viewdetails1(selected:any){
@@ -83,17 +84,18 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     this.router.navigate(['/elements/friendsdetails']);
   }
 request(selected:any){
-  this.snackbar.open("Request Sent...","undo",{duration:5000});
+  this.snackbar.open("Request Sent.","OK",{duration:5000, panelClass: ['blue-snackbar']});
+  console.log("inside hello");
   
 
 
 
     const payload = new FormData();
    
-    this.p1.nativeElement.innerHTML = "Requested";
-    this.p1.nativeElement.style.background="green";
-    this.p1.nativeElement.value=this.value;
-    console.log(this.value+"value is");
+    // this.p1.nativeElement.innerHTML = "Requested";
+    // this.p1.nativeElement.style.background="green";
+    // this.p1.nativeElement.value=this.value;
+    // console.log(this.value+"value is");
  
     
    
@@ -114,6 +116,7 @@ request(selected:any){
       console.log(this.addfriend);
     this.auth.addfriend(payload).subscribe(res=>{
       console.log(res);
+      console.log("inside res is")
     }
 
     )

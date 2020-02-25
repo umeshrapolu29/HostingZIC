@@ -12,21 +12,37 @@ import Swal from 'sweetalert2'
 })
 export class PostingComponent implements OnInit {
   array:any;
-  status:string="posting Successfull"
+   srcResult: any;
+    status:string="posting Successfull"
   postingData={
     comment:'',
     username:localStorage.getItem('username')
  }
  public emoployeeData: FormGroup
 public filesToUpload: Array<File> = [];
+
 fileChangeEvent(fileInput: any) {
   this.filesToUpload = <Array<File>>fileInput.target.files;
   // this.fileName = this.filesToUpload[0].name;
 }
 
   constructor(private _httpclient:HttpClient,private auth:AuthService){ }
-
+ onFileSelected() {
+      const inputNode: any = document.querySelector('#file');
+    
+      if (typeof (FileReader) !== 'undefined') {
+        const reader = new FileReader();
+    
+        reader.onload = (e: any) => {
+          this.srcResult = e.target.result;
+        };
+    
+        reader.readAsArrayBuffer(inputNode.files[0]);
+      }
+    }
   ngOnInit() {
+
+   
   }
 
   postingdata(){

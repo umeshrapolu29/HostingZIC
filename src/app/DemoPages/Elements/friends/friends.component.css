@@ -56,6 +56,10 @@ h3{
     box-shadow:1px 1px 5px -3px;
     width:900px;
 }
+.blue-snackbar{
+    background: #2196F3;
+  }
+
 /* .background{
     width: 151px;
     height: 151px;

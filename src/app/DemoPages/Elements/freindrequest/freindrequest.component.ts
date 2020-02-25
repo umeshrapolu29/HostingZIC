@@ -26,6 +26,7 @@ export class FreindrequestComponent implements OnInit,AfterViewInit {
       this.array=res;
       this.array1=this.array.data
      console.log(this.array1);
+     console.log("inside request");
 
       console.log(this.array1.data[0].requestfrom)
 

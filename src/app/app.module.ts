@@ -125,6 +125,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {NgCircleProgressModule} from 'ng-circle-progress';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { Dialogbox1Component } from './DemoPages/Elements/dialogbox1/dialogbox1.component';
 import { Dialogbox2Component } from './DemoPages/Element/dialogbox2/dialogbox2.component';
@@ -143,16 +144,18 @@ import { ResetpasswordComponent } from './DemoPages/Elements/resetpassword/reset
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MessengerComponent } from './DemoPages/Elements/messenger/messenger.component';
 import {MatCardModule} from '@angular/material/card';
-import{MatSnackBarModule, MatBottomSheetModule, MatListModule} from '@angular/material';
-// import {MatBottomSheetModule, MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import {MatBadgeModule} from '@angular/material/badge';
+import{MatSnackBarModule} from '@angular/material';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
-
+import {MatMenuModule} from '@angular/material/menu';
 import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
 import { ToBottomSheetComponent } from './to-bottom-sheet/to-bottom-sheet.component';
 import { MessageBottomSheetComponent } from './message-bottom-sheet/message-bottom-sheet.component';
 import { LogoutDialogueComponent } from './logout-dialogue/logout-dialogue.component';
-
+import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -161,6 +164,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
+  entryComponents:[ViewDetailsBottomsheetComponent],
   declarations: [
 
     // LAYOUT
@@ -270,9 +274,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FrienddetailsComponent,
     PhotosComponent, 
     ResetpasswordComponent, 
-    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, ToBottomSheetComponent, MessageBottomSheetComponent, LogoutDialogueComponent, 
+    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, ViewDetailsBottomsheetComponent, 
   ],
-  entryComponents:[ToBottomSheetComponent,MessageBottomSheetComponent,LogoutDialogueComponent],
+  // entryComponents:[ToBottomSheetComponent,MessageBottomSheetComponent,LogoutDialogueComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -289,10 +293,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatGridListModule,
     MatDatepickerModule,
     MatSnackBarModule,
-     MatBottomSheetModule,
-     
-    
-    // MatBottomSheetRef,
+    MatBottomSheetModule,
+    MatBadgeModule,
+    MatTooltipModule,
+    MatMenuModule,
     // Angular Bootstrap Components
 
     PerfectScrollbarModule,

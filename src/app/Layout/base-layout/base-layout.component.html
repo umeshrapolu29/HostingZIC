@@ -7,26 +7,51 @@
 'fixed-footer' : globals.toggleFixedFooter
 }" [class]="'app-container app-theme-white'">
   <!-- <app-header></app-header> -->
-  
-
   <app-sidebar></app-sidebar>
   <!-- <img  src='.../../../../../assets/images/pokemon2-1543556_1280.jpg' alt="OCR"    
   class="mt-1 background "> -->
 
-  <div class=" background">    
-    <div class="logout"> 
-      <i mat-raised-button (click)="openMessageBottomSheet()"class="far fa-envelope m-4"></i>
-      <i mat-raised-button (click)="openBottomSheet()" class="far fa-bell mx-2 my-4"></i>
-      <i class="fas fa-power-off m-4" (click)="logoutUser()"></i>
-     
-    </div>
 
-    <div class="layout rounded d-flex"> 
+     
+  <div class=" background ">  
+
+    <div class="headings">  
+      <h3 class="text-white">Welcome to Zyclyx Technologies !!</h3>
+      <p class="text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A impedit non voluptas nemo! Blanditiis, nobis.</p>
+
+    </div>
+   
+    <div class="logout text-light mr-4"> 
+      <i class="fas fa-envelope mr-4" matTooltipClass="example-tooltip-red" matTooltip="Mails"></i>
+        <!-- <span class="badge badge-light">4</span> -->
+        <span matBadgeSize="small" matBadge="7" matBadgeColor="warn" matBadgeOverlap="false">
+          <i class="fas fa-bell" matTooltipClass="example-tooltip-red" matTooltip="Notifications"> </i>
+        </span>
+      <i class="fas fa-power-off m-4" (click)="logoutUser()"  matTooltipClass="example-tooltip-red" matTooltip="Logout"></i> 
+
+      <i class="btn text-light fas fa-ellipsis-v fa-1x" matTooltipClass="example-tooltip-red" matTooltip="Options" [matMenuTriggerFor]="appMenu"></i>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item><i class="fas fa-key mr-2"></i>Update PassWord</button>
+        <button mat-menu-item><i class="fas fa-user-edit mr-2"></i>Edit Profile</button>
+        <button mat-menu-item  (click)="logoutUser()" class="Log-off"><i class="fas fa-power-off mr-2"></i>Log Off</button>
+      </mat-menu>
+<!--       
+      <button [matMenuTriggerFor]="appMenu">menu</button> -->
+
+
+      <!-- <div class="navigation">  
+        <a class="button1" href="">
+          <img class="img" src="https://pbs.twimg.com/profile_images/378800000639740507/fc0aaad744734cd1dbc8aeb3d51f8729_400x400.jpeg">        
+        <div class="logout">LOGOUT</div>      
+        </a>        
+      </div> -->
+
+    </div>
+<div class="layout rounded d-flex"> 
 <img class="text-right" src='../../../assets/images/banner.svg' height="auto" width="150px" alt="user" />
 <div class="text-white">
   <h4 class="ml-5">Lorem ipsum dolor sit</h4>
   <p class="ml-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, sed deleniti culpa amet iste perspiciatis expedita voluptate omnis veritatis aperiam nisi ipsa provident !</p>
-
     </div>
   </div>
   </div>
@@ -58,7 +83,7 @@
     <app-footer></app-footer>
   </div>
 
-<div class="sidebar-menu-overlay" (click)="toggleSidebarMobile()"></div>
+<!-- <div class="sidebar-menu-overlay" (click)="toggleSidebarMobile()"></div> -->
 </div>
-<ngx-loading-bar [color]="'var(--primary)'"></ngx-loading-bar>
+<!-- <ngx-loading-bar [color]="'var(--primary)'"></ngx-loading-bar> -->
 </div>
