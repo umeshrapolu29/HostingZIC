@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {select} from '@angular-redux/store';
 import {Observable} from 'rxjs';
 import {ConfigActions} from '../../ThemeOptions/store/config.actions';
@@ -41,7 +41,21 @@ import { LogoutDialogueComponent } from 'src/app/logout-dialogue/logout-dialogue
   ]
 })
 
-export class BaseLayoutComponent {  
+export class BaseLayoutComponent implements OnInit{  
+
+  name = 'Angular';
+  time = new Date();
+  timer;
+ 
+  ngOnInit() {
+   
+    this.timer = setInterval(() => {
+      this.time = new Date();
+    }, 1000);
+  }
+  ngOnDestroy(){
+    clearInterval(this.timer);
+  }
 
   @select('config') public config$: Observable<any>;
 

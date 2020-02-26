@@ -4,10 +4,46 @@
     background: #1a4879;
     position: relative;
 }
+
 .headings{
     position: absolute;
     top: 45px;
     left:40px;
+}
+.headings h5{
+  font-weight: lighter;
+  font-size: 2rem;
+  color: #FFBF00;
+
+}
+.fixed-top{
+  background: #1a4879;
+  position: fixed;
+  top: 0px;
+  right: 0;
+  left: 300px;
+  bottom: 470px;
+  z-index: 999;
+}
+.headings p{
+  font-weight: lighter;
+}
+.clock{
+  font-size: 2rem;
+  font-weight: lighter;
+  position: absolute;
+  right: 10px;
+  margin-right: -28px;
+  margin-top: 23px;
+}
+.clock .ext{
+  font-size: 1rem;
+  font-weight: lighter;
+}
+.clock .date{
+  font-size:15px;
+  font-weight: lighter;
+  color: #FFBF00;
 }
 
 .card{
@@ -45,7 +81,7 @@ a{
 }
 .layout{
     position:absolute;
-    padding: 2rem;
+    padding: 2r em;
     width: 90%;
     margin-left:23px;
     margin-top: 150px;

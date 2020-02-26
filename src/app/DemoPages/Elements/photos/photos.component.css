@@ -1,6 +1,3 @@
-/* .bg{
-    background-color: rgb(222, 229, 243);
-} */
 
 .imgstyle{
     width: 300px;
@@ -25,8 +22,8 @@
 } */
 /* .example-card {
     width: 250px;
-  } */
-  
+  }
+   */
   .example-header-image {
      /* background-image: url({{hero.file}});  */
     background-size: cover;

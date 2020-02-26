@@ -10,7 +10,6 @@
 }
 .layout{
     position: relative;
-
 }
 .descri{
     margin-top:34px;
@@ -25,6 +24,7 @@ a{
     min-width: 100% !important; 
     max-width: calc(100vw - 128px);
 }
+
 /* .m-card{
 
         position: relative;
