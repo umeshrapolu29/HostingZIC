@@ -12,7 +12,8 @@
   class="mt-1 background "> -->
 
   <div class=" background ">  
-    <div class="headings text-white col-8 d-flex justify-content-between align-items-center">     
+    <div class="fixed-top">
+    <div class="headings text-white col-11 d-flex justify-content-start align-items-center">     
        <div class="d-flex justify-content-center align-items-center">
          <div class="mr-4 text-center count">
           <!-- <i class="fas fa-users text-info"></i> -->
@@ -33,7 +34,7 @@
 <div class="clock text-right">
   <span>{{ time | date: 'hh:mm:ss ' }}</span>
   <span class="ext">{{ time | date: 'a' }}</span>
-<p class="date"><i class="far fa-clock mr-2"></i> {{ time | date: 'dd/MM/yyyy' }}  </p>
+<p class="date"><i class="far fa-clock mr-2"></i> {{ time | date: 'dd  MMMM yyyy' }}  </p>
 
 </div>  
 </div>
@@ -68,11 +69,12 @@
         <div class="logout">LOGOUT</div>      
         </a>        
       </div> -->
-
+</div>
     </div>
-<div class="layout rounded d-flex"> 
+
+<div class="layout p-3 rounded d-flex"> 
 <img class="text-right" src='../../../assets/images/banner.svg' height="auto" width="150px" alt="user" />
-<div class="text-white">
+<div class="text-white p-1">
   <h4 class="ml-5">Welcome to Zyclyx Technologies !!</h4>
   <p class="ml-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, sed deleniti culpa amet iste perspiciatis expedita voluptate omnis veritatis aperiam nisi ipsa provident !</p>
     </div>
