@@ -151,8 +151,11 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
+import { ToBottomSheetComponent } from './to-bottom-sheet/to-bottom-sheet.component';
+import { MessageBottomSheetComponent } from './message-bottom-sheet/message-bottom-sheet.component';
+import { LogoutDialogueComponent } from './logout-dialogue/logout-dialogue.component';
 import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
-
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -273,6 +276,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ResetpasswordComponent, 
     MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, ViewDetailsBottomsheetComponent, 
   ],
+  // entryComponents:[ToBottomSheetComponent,MessageBottomSheetComponent,LogoutDialogueComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -304,6 +308,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HttpClientModule,
     MatFormFieldModule,
     MatCardModule,
+    MatListModule,
     
     // Charts
     MatSelectModule,

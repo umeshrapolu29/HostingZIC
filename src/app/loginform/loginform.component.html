@@ -16,20 +16,31 @@
             <div class="logInForm">
               <h5 class="text-center">Login</h5>
               <hr>
-              <form>
+              <form #loginForm="ngForm"(ngsubmit)="onSubmit(loginForm)">
                 <mat-form-field class="example-full-width d-block">
-                  <input matInput placeholder="username" name="Username" [(ngModel)]="logindata.username"
-                    autocomplete="off">
+                  <input matInput placeholder="username" name="Username" #username="ngModel"[(ngModel)]="logindata.username"
+                    autocomplete="off" required>
+                    <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+                      <div *ngIf="username.hasError('required')">
+                        Please enter User Name
+                      </div>
+
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width d-block">
-                  <input type="password" matInput placeholder="password" name="password"
-                    [(ngModel)]="logindata.password">
+                  <input type="password" matInput placeholder="password" #password="ngModel" name="password"
+                    [(ngModel)]="logindata.password"required>
+                    <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                      <div *ngIf="password.hasError('required')">
+                        Please enter Password
+                      </div>
+                    </mat-error>
                 </mat-form-field>
 
                 <div class="mt-4 d-flex justify-content-end">
                   <button type="submit" (click)="login()"
-                  routerLinkActive="router-link-active" mat-stroked-button>Submit</button>
+                  routerLinkActive="router-link-active" mat-stroked-button [disabled]="loginForm.invalid">Submit</button>
                   <button type="button" class="ml-4" [routerLink]="['/registration']" mat-stroked-button color="primary">Register</button>
                 </div>
                  <!-- <div class="d-flex justify-content-center mt-5">

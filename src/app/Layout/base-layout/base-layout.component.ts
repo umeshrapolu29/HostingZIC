@@ -5,6 +5,11 @@ import {ConfigActions} from '../../ThemeOptions/store/config.actions';
 import {ThemeOptions} from '../../theme-options';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 import {  Router } from '@angular/router';
+import { MatBottomSheet, MatDialog, MatDialogRef,MAT_DIALOG_DATA } from '@angular/material';
+import { ToBottomSheetComponent } from 'src/app/to-bottom-sheet/to-bottom-sheet.component';
+import { MessageBottomSheetComponent } from 'src/app/message-bottom-sheet/message-bottom-sheet.component';
+import { LogoutDialogueComponent } from 'src/app/logout-dialogue/logout-dialogue.component';
+
 
 @Component({
   selector: 'app-base-layout',
@@ -54,16 +59,34 @@ export class BaseLayoutComponent implements OnInit{
 
   @select('config') public config$: Observable<any>;
 
-  constructor(public globals: ThemeOptions, public configActions: ConfigActions,private _router: Router) {
+  constructor( public dialog: MatDialog, private bottomSheet:MatBottomSheet, public globals: ThemeOptions, public configActions: ConfigActions,private _router: Router) {
   }
-
+  openBottomSheet() {
+    this.bottomSheet.open(ToBottomSheetComponent);
+  }
+  openMessageBottomSheet(){
+    this.bottomSheet.open(MessageBottomSheetComponent);
+  }
   toggleSidebarMobile() {
     this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
   }
+  // logoutUser(){
+  //   let dialogRef = this.dialog.open(LogoutDialogueComponent, {
+      
+  //   });
+
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
+      
+  //   });
+  
+  // }
+  
   logoutUser(){
-   
-  this._router.navigate(['/login'])
+    this._router.navigate(['/login']);
   }
+  
+  
 }
 
 
