@@ -45,7 +45,27 @@
   font-weight: lighter;
   color: #FFBF00;
 }
+.mat-form-field-flex{
+  padding: 0px !important;
+}
+  .mat-input-element:disabled {
+    color: rgba(0, 0, 0, 0) !important;
+}
+.date-pic{
+  color: transparent !important;
+}
+.date{
+  color: #FFBF00;
+}
+.mat-form-field-wrapper {
+  padding-bottom:0px !important;
+}
 
+.mat-form-field-flex {
+ display: none !important;
+ padding-bottom:0px !important;
+color: transparent !important;
+}
 .card{
     margin-left: 231px;
     height: 36px;
