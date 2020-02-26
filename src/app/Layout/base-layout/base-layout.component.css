@@ -23,7 +23,7 @@
   right: 0;
   left: 300px;
   bottom: 470px;
-  z-index: 1030;
+  z-index: 999;
 }
 .headings p{
   font-weight: lighter;
