@@ -56,19 +56,21 @@ export class BaseLayoutComponent {
   toggleSidebarMobile() {
     this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
   }
-  logoutUser(){
-    let dialogRef = this.dialog.open(LogoutDialogueComponent, {
+  // logoutUser(){
+  //   let dialogRef = this.dialog.open(LogoutDialogueComponent, {
       
-    });
+  //   });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+  //   dialogRef.afterClosed().subscribe(result => {
+  //     console.log('The dialog was closed');
       
-    });
+  //   });
   
+  // }
+  
+  logoutUser(){
+    this._router.navigate(['/login']);
   }
-  
-  
   
   
 }

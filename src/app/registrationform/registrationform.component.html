@@ -6,46 +6,105 @@
     <div class="card-body">
       <h3 class="text-center title h3style">Registration Form</h3>
       <hr class="line">
-      <form class="form">
+      <form class="form" #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <label> First Name:</label>
-              <input type="text" class="form-control" name="firstname"  [(ngModel)]="registerData.firstname">
+              <mat-form-field>
+              <mat-label> First Name</mat-label>
+              <input matInput  name="firstname"  [(ngModel)]="registerData.firstname" #firstname="ngModel" pattern="[a-zA-Z\s]+" autocomplete="off" required>
+              <mat-error *ngIf="firstname.invalid &&(firstname.dirty || firstname.touched)">
+                <div *ngIf="firstname.hasError('required')">
+                  Please enter First Name
+                </div>
+                <div *ngIf="firstname.hasError('pattern')">
+                  please enter alphabets only.
+
+                </div>
+  
+              </mat-error>
+            </mat-form-field>
+            
             </div>
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="pwd"> Last Name:</label>
-              <input type="text" class="form-control" name="lasttname"  [(ngModel)]="registerData.lastname">
+              <mat-form-field>
+              <mat-label> Last Name</mat-label>
+              <input matInput  name="lasttname"  [(ngModel)]="registerData.lastname" #lastname="ngModel" pattern="[a-zA-Z\s]+" autocomplete="off"  required>
+              <mat-error *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+                <div *ngIf="lastname.hasError('required')">
+                  Please enter Last Name
+                </div>
+                <div *ngIf="lastname.hasError('pattern')">
+                  please enter alphabets only.
+                </div>
+              </mat-error>
+            </mat-form-field>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <label> User Name:</label>
-              <input type="text" class="form-control" name="username"  [(ngModel)]="registerData.username">
+              <mat-form-field>
+              <mat-label> User Name</mat-label>
+              <input matInput name="username"  [(ngModel)]="registerData.username" #username ="ngModel" autocomplete="off"  required>
+              <mat-error *ngIf="username.invalid && (username.dirty || username.touched)">
+                <div *ngIf="username.hasError('required')">
+                  Please enter username
+                </div>
+              </mat-error>
+            </mat-form-field>
             </div>
           </div>
           <div class="col">
             <div class="form-group">
-              <label> Email:</label>
-              <input type="text" class="form-control" name="email"  [(ngModel)]="registerData.email">
+              <mat-form-field>
+              <mat-label> Email </mat-label>
+              <input matInput type="text" name="email"  [(ngModel)]="registerData.email" #email="ngModel" pattern="([A-Za-z0-9_\-\.])+([A-Za-z0-9_\-\.])+([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" autocomplete="off"  required>
+              <mat-error *ngIf="email.invalid &&(email.dirty || email.touched)">
+                <div *ngIf="email.hasError('required')">
+                  Please enter Email Id
+                </div>
+                <div *ngIf="email.hasError('pattern')">
+                  Please enter valid Email Id
+
+                </div>
+                
+              </mat-error>
+            </mat-form-field>
+
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <div class="form-group">
-              <label> Password:</label>
-              <input type="password" class="form-control" name="password"  [(ngModel)]="registerData.password">
+              <mat-form-field>
+              <mat-label> Password</mat-label>
+              <input matInput type="password"  name="password"  [(ngModel)]="registerData.password" #password="ngModel" autocomplete="off"  required minlength="8">
+              <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.hasError('required')">
+                  Please enter Password 
+                </div>
+                <div *ngIf="password.hasError('minlength')">
+                Minimum 8 characters are required.
+                </div>
+                
+                  
+        
+              </mat-error>
+            </mat-form-field>
             </div>
           </div>
           <div class="col">
             <div class="form-group">
-              <label for="pwd"> Photo:</label>
-              <input type="file" class="form-control-file" id="Email" placeholder=" Confirmpassword" (change)="fileChangeEvent($event)" #fileInput>
+              
+              
+              <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+              <input class="mr-3" (change)="onFileSelected()" #fileInput type="file" id="file">
+            
             </div>
           </div>
         </div>
@@ -55,7 +114,7 @@
         </div> -->
 
         <button type="submit" (click)="register()"
-        routerLinkActive="router-link-active mr-2" mat-stroked-button>Submit</button>
+        routerLinkActive="router-link-active mr-2" mat-stroked-button color="accent"[disabled]="regForm.invalid">Submit</button>
         <button type="button" class="ml-4" [routerLink]="['/login']" mat-stroked-button color="primary">Login</button>
 
       </form>
