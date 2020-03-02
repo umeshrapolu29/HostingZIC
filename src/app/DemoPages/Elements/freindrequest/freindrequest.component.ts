@@ -41,7 +41,7 @@ export class FreindrequestComponent implements OnInit,AfterViewInit {
     const payload = new FormData();
     this.p1.nativeElement.innerHTML = "Confirmed";
     this.p1.nativeElement.style.background="green";
-     this.p2.nativeElement.disabled = true;;
+     this.p2.nativeElement.disabled = true;
 
     console.log("requestfromname: ", selected._id);
     //payload.append('requestto',localStorage.getItem('username'));
@@ -54,7 +54,7 @@ export class FreindrequestComponent implements OnInit,AfterViewInit {
   requeststatusdelete(selected:any){
     const payload = new FormData();
     this.p2.nativeElement.innerHTML = "Deleted";
-    this.p2.nativeElement.style.background="red";
+    this.p2.nativeElement.style.background="red !important";
      this.p1.nativeElement.disabled = true;;
 
     console.log("requestfromname: ", selected._id);

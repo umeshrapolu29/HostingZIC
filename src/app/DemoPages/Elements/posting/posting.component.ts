@@ -41,6 +41,8 @@ fileChangeEvent(fileInput: any) {
       }
     }
   ngOnInit() {
+    console.log("inside post");
+    console.log(this.filesToUpload[0], this.filesToUpload[0].name+"file is");
 
    
   }
@@ -71,8 +73,5 @@ fileChangeEvent(fileInput: any) {
 
       }
     )
-
-    
   }
-
 }

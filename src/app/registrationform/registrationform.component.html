@@ -100,10 +100,29 @@
           </div>
           <div class="col">
             <div class="form-group">
+              <mat-form-field>
+              <mat-label> Confirm Password</mat-label>
+              <input matInput type="password"  name="password"  [(ngModel)]="registerData.password" #password="ngModel" autocomplete="off"  required minlength="8">
+              <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+                <div *ngIf="password.hasError('required')">
+                  Please enter Confirm Password 
+                </div>
+                <div *ngIf="password.hasError('minlength')">
+                Minimum 8 characters are required.
+                </div>
+                
+                  
+        
+              </mat-error>
+            </mat-form-field>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
               
               
-              <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-              <input class="mr-3" (change)="onFileSelected()" #fileInput type="file" id="file">
+              <button type="button " mat-raised-button (click)="fileInput.click()">Choose File</button>
+              <input class="mr-3" style="margin-left: -91px;" (change)="onFileSelected()" #fileInput type="file" id="file">
             
             </div>
           </div>
@@ -113,7 +132,7 @@
           <button type="button" class="btn btn-primary  " [routerLink]="['/login']">Login</button>
         </div> -->
 
-        <button type="submit" (click)="register()"
+        <button type="submit" (click)="register()" style="margin: 30px 0px 0px;"
         routerLinkActive="router-link-active mr-2" mat-stroked-button color="accent"[disabled]="regForm.invalid">Submit</button>
         <button type="button" class="ml-4" [routerLink]="['/login']" mat-stroked-button color="primary">Login</button>
       </form>
