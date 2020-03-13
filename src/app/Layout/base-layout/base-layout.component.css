@@ -21,7 +21,7 @@
   top: 0px;
   right: 0;
   left: 300px;
-  bottom: 470px;
+  height: 150px;
   z-index: 999;
 }
 .headings p{
@@ -100,7 +100,7 @@ a{
 }
 .layout{
     position:absolute;
-    padding: 2r em;
+    padding: 2rem;
     width: 90%;
     margin-left:23px;
     margin-top: 150px;

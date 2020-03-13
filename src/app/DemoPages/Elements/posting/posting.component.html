@@ -1,15 +1,17 @@
 <div class="container-fluid">
   <div class="row mt-4">
-    <div class="col-6 border col-1">
-    </div>
+    <div class="col-3"></div>
+  
     <div class="col-6">
       <div class="border p-3 bg-white rounded">
         <h5 class="text-primary text-center">Send a post Here</h5>
         <hr>
         <p>Post Details</p>
         <form class="example-form">
-          <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
-          <input (change)="onFileSelected()" #fileInput type="file" id="file">
+          <!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button> -->
+          <!-- <input (change)="fileChangeEvent($event)" #fileInput> -->
+          <input type="file"  id="Email" placeholder=" Confirmpassword"
+          (change)="fileChangeEvent($event)" #fileInput>
           <br>
           <mat-form-field class="example-full-width mt-3">
             <mat-label>Leave a comment</mat-label>
@@ -20,6 +22,7 @@
         </form>
       </div>
     </div>
+    <div class="col-3"></div>
   </div>
 </div>
 

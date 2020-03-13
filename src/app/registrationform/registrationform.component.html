@@ -102,12 +102,12 @@
             <div class="form-group">
               <mat-form-field>
               <mat-label> Confirm Password</mat-label>
-              <input matInput type="password"  name="password"  [(ngModel)]="registerData.password" #password="ngModel" autocomplete="off"  required minlength="8">
-              <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
-                <div *ngIf="password.hasError('required')">
+              <input matInput type="password"  name="password"  [(ngModel)]="registerData.password" #cnfmPwd="ngModel" autocomplete="off"  required minlength="8">
+              <mat-error *ngIf="cnfmPwd.invalid && (cnfmPwd.dirty || cnfmPwd.touched)">
+                <div *ngIf="cnfmPwd.hasError('required')">
                   Please enter Confirm Password 
                 </div>
-                <div *ngIf="password.hasError('minlength')">
+                <div *ngIf="cnfmPwd.hasError('minlength')">
                 Minimum 8 characters are required.
                 </div>
                 
@@ -121,8 +121,8 @@
             <div class="form-group">
               
               
-              <button type="button " mat-raised-button (click)="fileInput.click()">Choose File</button>
-              <input class="mr-3" style="margin-left: -91px;" (change)="onFileSelected()" #fileInput type="file" id="file">
+              <button type="button ">Choose File</button>
+              <input class="mr-3"  (change)="fileChangeEvent($event)" #fileInput style="margin-left: -91px;"  type="file" id="file">
             
             </div>
           </div>

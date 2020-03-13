@@ -16,9 +16,7 @@ import { ViewDetailsBottomsheetComponent } from 'src/app/DemoPages/Elements/view
   styleUrls: ['./friends.component.css']
 })
 export class FriendsComponent implements OnInit,AfterViewInit  {
-  ngAfterViewInit(): void {
-    throw new Error("Method not implemented.");
-  }
+
   @ViewChild('id1') p1:ElementRef;
   @ViewChild('id2') p2:ElementRef;
  array:any;
@@ -88,13 +86,21 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     this.bottomSheet.open(ViewDetailsBottomsheetComponent);
     // this.router.navigate(['/elements/friendsdetails']);
   }
+  
+  ngAfterViewInit(){
+    console.log(this.p1.nativeElement );
+    this.p1.nativeElement.style.color='red';
+  }
 request(selected:any){
   this.snackbar.open("Request Sent.","OK",{duration:5000, panelClass: ['blue-snackbar']});
   console.log("inside hello");
+ 
     const payload = new FormData();   
     // this.p1.nativeElement.innerHTML = "Requested";
     // this.p1.nativeElement.style.background="green";
+
     // this.p1.nativeElement.value=this.value;
+    
     // console.log(this.value+"value is");
  
     
