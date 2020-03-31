@@ -15,7 +15,7 @@ import { ViewDetailsBottomsheetComponent } from 'src/app/DemoPages/Elements/view
   templateUrl: './friends.component.html',
   styleUrls: ['./friends.component.css']
 })
-export class FriendsComponent implements OnInit,AfterViewInit  {
+export class FriendsComponent implements OnInit  {
 
   @ViewChild('id1') p1:ElementRef;
   @ViewChild('id2') p2:ElementRef;
@@ -75,22 +75,22 @@ export class FriendsComponent implements OnInit,AfterViewInit  {
     console.log("Selected item Id: ",selected.requestfromname);
     localStorage.setItem('frdienddetailsname',selected.username)
     console.log(selected.username+"fromdata")
-    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
-    // this.router.navigate(['/elements/friendsdetails']);
+    // this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+   this.router.navigate(['/elements/viewdetails1']);
   
   }
   viewdetails1(selected:any){
     console.log("Selected item Id: ",selected.requestfromname);
     localStorage.setItem('frdienddetailsname',selected.requestto)
     console.log(selected.requestto+"todata")
-    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
-    // this.router.navigate(['/elements/friendsdetails']);
+    // this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+   this.router.navigate(['/elements/viewdetails1']);
   }
   
-  ngAfterViewInit(){
-    console.log(this.p1.nativeElement );
-    this.p1.nativeElement.style.color='red';
-  }
+  // ngAfterViewInit(){
+  //   console.log(this.p1.nativeElement );
+  //   this.p1.nativeElement.style.color='red';
+  // }
 request(selected:any){
   this.snackbar.open("Request Sent.","OK",{duration:5000, panelClass: ['blue-snackbar']});
   console.log("inside hello");

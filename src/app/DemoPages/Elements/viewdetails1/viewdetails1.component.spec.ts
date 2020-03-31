@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessageBottomSheetComponent } from './message-bottom-sheet.component';
+import { Viewdetails1Component } from './viewdetails1.component';
 
-describe('MessageBottomSheetComponent', () => {
-  let component: MessageBottomSheetComponent;
-  let fixture: ComponentFixture<MessageBottomSheetComponent>;
+describe('Viewdetails1Component', () => {
+  let component: Viewdetails1Component;
+  let fixture: ComponentFixture<Viewdetails1Component>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessageBottomSheetComponent ]
+      declarations: [ Viewdetails1Component ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MessageBottomSheetComponent);
+    fixture = TestBed.createComponent(Viewdetails1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

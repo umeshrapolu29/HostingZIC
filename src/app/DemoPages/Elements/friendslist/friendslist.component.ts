@@ -52,15 +52,15 @@ export class FriendslistComponent implements OnInit {
     console.log("Selected item Id: ",selected.requestfromname);
     localStorage.setItem('frdienddetailsname',selected.requestfrom)
     console.log(selected.requestfrom+"fromdata")
-    // this.router.navigate(['/elements/friendsdetails']);
-    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+     this.router.navigate(['/elements/viewdetails1']);
+    // this.bottomSheet.open(ViewDetailsBottomsheetComponent);
   }
   viewdetails1(selected:any){
     console.log("Selected item Id: ",selected.requestfromname);
     localStorage.setItem('frdienddetailsname',selected.requestto)
     console.log(selected.requestto+"todata")
-    this.bottomSheet.open(ViewDetailsBottomsheetComponent);
-    //  this.router.navigate(['/elements/friendsdetails']);
+    // this.bottomSheet.open(ViewDetailsBottomsheetComponent);
+      this.router.navigate(['/elements/viewdetails1']);
   }
 
 }

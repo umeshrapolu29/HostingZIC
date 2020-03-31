@@ -151,11 +151,15 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
-import { ToBottomSheetComponent } from './to-bottom-sheet/to-bottom-sheet.component';
-import { MessageBottomSheetComponent } from './message-bottom-sheet/message-bottom-sheet.component';
-import { LogoutDialogueComponent } from './logout-dialogue/logout-dialogue.component';
-import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
+// import { ToBottomSheetComponent } from './to-bottom-sheet/to-bottom-sheet.component';
+// import { MessageBottomSheetComponent } from './message-bottom-sheet/message-bottom-sheet.component';
+// import { LogoutDialogueComponent } from './logout-dialogue/logout-dialogue.component';
+ import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
 import {MatListModule} from '@angular/material/list';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ChatComponent } from './chat/chat.component';
+
+import { Viewdetails1Component } from './DemoPages/Elements/viewdetails1/viewdetails1.component';
 
 
 
@@ -164,7 +168,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  entryComponents:[ViewDetailsBottomsheetComponent],
+  // entryComponents:[ViewDetailsBottomsheetComponent],
   declarations: [
 
     // LAYOUT
@@ -220,6 +224,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ProgressBarComponent,
     PaginationComponent,
     TooltipsPopoversComponent,
+    ViewDetailsBottomsheetComponent,
 
     // Tables
 
@@ -274,7 +279,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FrienddetailsComponent,
     PhotosComponent, 
     ResetpasswordComponent, 
-    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, ViewDetailsBottomsheetComponent, 
+    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, EditProfileComponent, ChatComponent, Viewdetails1Component, 
   ],
   // entryComponents:[ToBottomSheetComponent,MessageBottomSheetComponent,LogoutDialogueComponent],
   imports: [

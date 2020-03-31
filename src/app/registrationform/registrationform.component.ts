@@ -17,6 +17,7 @@ export class RegistrationformComponent implements OnInit {
     password:'',
     confirmpassword:''
  }
+ ngSubmit:any;
 
   constructor(private _httpclient:HttpClient,private auth:AuthService) { }
 

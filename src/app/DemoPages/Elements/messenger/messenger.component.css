@@ -1,213 +1,62 @@
-body{
-  background:url('https://s-media-cache-ak0.pinimg.com/736x/f4/ac/6a/f4ac6aac3afb587f6cae04155656fca3.jpg');
+/* .about{
+	cursor: pointer;
+	background-color: rgb(227, 241, 243);
+	color: rgb(230, 22, 74);
+	padding-top: 20px;
+	padding-bottom: 30px;
 }
+.about h1 {
+	padding: 10px 0;
+	margin-bottom: 20px;
+}
+.about h2 {
+	opacity: .8;
+}
+.about span {
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	margin:auto;
+	border-radius:50%;  
+	font-size: 40px;
+	color: #FFFFFF;
+	opacity: 0.7;
+	background-color: #4C0822;
+	border: 2px solid #4C0822;
 
-.containers{
-  width:550px;
-  height:100%;
-  margin-left:10px;
-}
-
-.pic{
-  /* box-shadow: 6px 6px 7px #888888; */
-  width:200px;
-  height:200px;
-  border: 1px solid;
-  background-color: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  margin-top:100px;
-  margin-left:135px;
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.pic img{
-    transform: rotate(-45deg);
-    position: absolute;
-    z-index: 99;
+	webkit-transition:all .5s ease;
+ 	moz-transition:all .5s ease;
+ 	os-transition:all .5s ease;
+ 	transition:all .5s ease;
 
 }
-/* .pic:before
-{
-  content: '';
-  margin-top:-63px;
-  margin-left:-80px;
-  position: absolute;
-  z-index: 99;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50% -50%);
-  width: 450px;
-  height: 450px;
-  background-image: url('../../../../assets/images/avatars/12.jpg') center center;
-  background-repeat: no-repeat;
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+.about-item:hover span{
+	opacity: 1;	
+	border: 2px solid #CC0039;
+	font-size: 42px;
+	-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
+	-moz-transform: scale(1.1,1.1) rotate(360deg) ;
+	-o-transform: scale(1.1,1.1) rotate(360deg) ;
+	transform: scale(1.1,1.1) rotate(360deg) ;
+}
+.about-item:hover h2{
+	opacity: 1;
+	-webkit-transform: scale(1.1,1.1)  ;
+	-moz-transform: scale(1.1,1.1)  ;
+	-o-transform: scale(1.1,1.1)  ;
+	transform: scale(1.1,1.1) ;
+}
+.about .lead{
+	color: rgb(32, 31, 31);
+	font-size: 14px;
+	font-weight: bold;
 } */
-
-.pic:hover , .box1:hover , .box2:hover , .social1:hover , .social2:hover , .social3:hover {
-  /* box-shadow: 3px 3px 7px #888888; */
-  cursor:pointer;
+.img img{
+  height:auto;
+  width:300px;
 }
-
-.box1{
-  /* box-shadow: 6px 6px 7px #888888; */
-  width:60px;
-  height:60px;
-  position: relative;
-  top: -75px;
-  left: 50px;
-  border: 1px solid;
-  overflow: hidden;
-  /* margin-top:-124px;
-  margin-left:16px; */
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.box1:before{
-  content: '';
-  /* margin-top:-25px;
-  margin-left:-31px; */
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: url('http://creek.themebucket.net/wp-content/uploads/2015/09/8.jpg') center center;
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.box2{
-  /* box-shadow: 6px 6px 7px #888888; */
-  position: relative;
-  top: -80px;
-  left: 105px;
-  border: 1px solid;
-  overflow: hidden;
-  width:60px;
-  height:60px;
-  /* margin-top:14px;
-  margin-left:78px; */
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.box2:before{  
-  content: '';
-  /* margin-top:-74px;
-  margin-left:-31px; */
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: url('http://i-cdn.phonearena.com/images/articles/220901-image/Here-is-how-the-start-screen-of-Google-Maps-looks-like.jpg') center center;
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.social1{
-  /* box-shadow: 6px 6px 7px #888888; */
-  width:60px;
-  height:60px;
-  background-color:#3b5998;
-  position: relative;
-  top: -195px;
-  left: 360px;
-  /* margin-top:-90px;
-  margin-left:350px; */
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.social1 > i{
-  font-size:40px;
-  /* margin-top:13px;
-  margin-left:20px; */
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  color:#ffffff;
-}
-
-.social2{
-  /* box-shadow: 6px 6px 7px #888888; */
-  width:60px;
-  height:60px;
-  position: relative;
-  top: -195px;
-  left: 300px;
-  background-color:#C73B6F;
-  /* margin-top:19px;
-  margin-left:278px; */
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.social2 > i{
-  font-size:40px;
-  /* margin-top:8px;
-  margin-left:13px; */
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  color:#ffffff;
-}
-
-.social3{
-/* box-shadow: 6px 6px 7px #888888; */
-width: 120px;
-height: 120px;
-position: relative;
-top: -235px;
-left: 175px;
-  background-color:#000000;
-  /* margin-top: 4px;
-  margin-left: 205px; */
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.social3 > i{
-  font-size:40px;
-  /* margin-top:9px;
-  margin-left:9px; */
-  -ms-transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  color:#ffffff;
-}
-
-.content{
-  height:100%;
-  width:500px;
-}
-
-p{
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-h2{
-  font-family: 'Dancing Script', cursive;
-}
-
-.contentHead{
-  font-family: 'Open Sans Condensed', sans-serif;
-  /* font-size:60px; */
-  font-weight:500;
-  text-decoration:underline;
-}
-
-sup{
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-style: italic;
-  font-size:smaller;
-}
-
-span{
-  color:pink;
+.title{
+  text-align: center;
+  font-size: 24px;
 }

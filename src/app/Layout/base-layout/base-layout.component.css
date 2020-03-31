@@ -135,6 +135,20 @@ a{
       background: red !important;
       font-weight: 500;
   }
+.clock .calender{
+  background-color: transparent;
+  border: none;
+}
+.mat-datepicker-toggle-default-icon
+{
+  color: #FFBF00 !important;
+  ;
+}
+.mat-icon-button{
+  color: #FFBF00 !important;
+}
+
+  
   /* .navigation {
     width: 100%;
     background-color: black;

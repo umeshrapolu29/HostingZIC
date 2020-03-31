@@ -31,7 +31,9 @@
 <div class="clock text-right">
   <span>{{ time | date: 'hh:mm:ss ' }}</span>
   <span class="ext">{{ time | date: 'a' }}</span>
-<p class="date"><i class="far fa-calendar-alt mr-2"></i> {{ time | date: 'dd  MMMM yyyy' }}  </p>
+<p class="date"><input [matDatepicker]="dp3"class="calender" disabled >
+  <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+  <mat-datepicker #dp3 disabled="false"></mat-datepicker> {{ time | date: 'dd  MMMM yyyy' }}  </p>
 <!-- <mat-form-field >    
   <input class="date-pic" matInput [matDatepicker]="dp3" disabled>
   <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>

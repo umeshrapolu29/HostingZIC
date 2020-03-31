@@ -79,6 +79,8 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { Forget1passwordComponent } from './DemoPages/Elements/forget1password/forget1password.component';
 import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendslist.component';
 import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
+import { ChatComponent } from './chat/chat.component';
+import { Viewdetails1Component } from './DemoPages/Elements/viewdetails1/viewdetails1.component';
 
 
 
@@ -90,6 +92,7 @@ const routes: Routes = [
 {path:'forgetpassword1',component:Forget1passwordComponent},
 
 {path:'resetpassword',component:ResetpasswordComponent},
+{path:'chat',component:ChatComponent},
   {
     path: '',
     component: BaseLayoutComponent,
@@ -131,6 +134,8 @@ const routes: Routes = [
       {path:'elements/messenger',component:MessengerComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/friendslist',component:FriendslistComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/viewdetails-bottom',component:ViewDetailsBottomsheetComponent,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/viewdetails1',component:Viewdetails1Component,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/forgetpassword1',component:ForgetpasswordComponent,data:{extraParameter:'elementsmenu'}},
 
 
 

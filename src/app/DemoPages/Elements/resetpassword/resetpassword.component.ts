@@ -3,6 +3,7 @@ import{AuthService} from '../../../auth.service';
 import { HttpClient ,HttpParams} from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-resetpassword',
@@ -17,7 +18,7 @@ export class ResetpasswordComponent implements OnInit {
   }
   array:any;
 
-  constructor(private _httpclient:HttpClient,private auth:AuthService){ }
+  constructor(private _httpclient:HttpClient,private auth:AuthService,private _router:Router){ }
 
   ngOnInit() {
   }
@@ -34,6 +35,7 @@ export class ResetpasswordComponent implements OnInit {
 
       if(this.array.data.n==1){
       Swal.fire('',this.array.msg,'success')
+      this._router.navigate(['/login']);
       }
       else{
         Swal.fire('',' Invalid Token','error')

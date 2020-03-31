@@ -6,9 +6,9 @@ import {ThemeOptions} from '../../theme-options';
 import {animate, query, style, transition, trigger} from '@angular/animations';
 import {  Router } from '@angular/router';
 import { MatBottomSheet, MatDialog, MatDialogRef,MAT_DIALOG_DATA } from '@angular/material';
-import { ToBottomSheetComponent } from 'src/app/to-bottom-sheet/to-bottom-sheet.component';
-import { MessageBottomSheetComponent } from 'src/app/message-bottom-sheet/message-bottom-sheet.component';
-import { LogoutDialogueComponent } from 'src/app/logout-dialogue/logout-dialogue.component';
+// import { ToBottomSheetComponent } from 'src/app/to-bottom-sheet/to-bottom-sheet.component';
+// import { MessageBottomSheetComponent } from 'src/app/message-bottom-sheet/message-bottom-sheet.component';
+// import { LogoutDialogueComponent } from 'src/app/logout-dialogue/logout-dialogue.component';
 
 
 @Component({
@@ -61,12 +61,12 @@ export class BaseLayoutComponent implements OnInit{
 
   constructor( public dialog: MatDialog, private bottomSheet:MatBottomSheet, public globals: ThemeOptions, public configActions: ConfigActions,private _router: Router) {
   }
-  openBottomSheet() {
-    this.bottomSheet.open(ToBottomSheetComponent);
-  }
-  openMessageBottomSheet(){
-    this.bottomSheet.open(MessageBottomSheetComponent);
-  }
+  // openBottomSheet() {
+  //   this.bottomSheet.open(ToBottomSheetComponent);
+  // }
+  // openMessageBottomSheet(){
+  //   this.bottomSheet.open(MessageBottomSheetComponent);
+  // }
   toggleSidebarMobile() {
     this.globals.toggleSidebarMobile = !this.globals.toggleSidebarMobile;
   }

@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src="{{file1}}" width="350px">
+
+    </div>
+    <div class="col">
+      <h2>{{name}}</h2>
+      <h4>Introduction</h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora explicabo illum quaerat deserunt inventore pariatur molestiae architecto nobis impedit deleniti, voluptatem labore repellat ducimus voluptates error ratione quos perferendis repudiandae, sapiente et tempore, ex incidunt nulla porro! Iusto, quae aspernatur.</p>
+      <div class="row">
+           <div class="col">
+               <a class="btn btn-secondary btn-lg btn-block text-light w-40"><i class="fas fa-hands-helping mr-2"></i>Connect</a>
+          </div>
+          <div class="col">
+           <a class="btn btn-primary btn-lg btn-block text-light w-40"><i class="fas fa-paper-plane mr-2"></i>Chat</a>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <h1>23</h1>
+              <p>Connections</p>
+          </div>
+
+          <div class="col">
+              <h1>23</h1>
+              <p>Posts</p>
+          </div>
+      </div>           
+    </div>          
+  </div>
+  <!-- <div class="row">
+      <div class="col-12">
+        <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Connections</a>
+          <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Posts</a>
+         
+        </div>
+      </div>
+      <div class="col-12 mt-3">
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+              <div class="d-flex justify-content-around">
+              <div class="card" style="width: 18rem;">
+                  <img src="./Men-in-black.jpg" class="card-img-top" alt="Rizwan">
+                  <div class="card-body">
+                    <h5 class="card-title">Mohammed Rizwan</h5>
+                    <p class="card-text">RPA Developer</p>
+                    <a href="#" class="btn btn-primary">Connect</a>
+                  </div>
+                </div> 
+                <div class="card" style="width: 18rem;">
+                  <img src="./Men-in-black.jpg" class="card-img-top" alt="Rizwan">
+                  <div class="card-body">
+                    <h5 class="card-title">Mohammed Rizwan</h5>
+                    <p class="card-text">RPA Developer</p>
+                    <a href="#" class="btn btn-primary">Connect</a>
+                  </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                  <img src="./Men-in-black.jpg" class="card-img-top" alt="Rizwan">
+                  <div class="card-body">
+                    <h5 class="card-title">Mohammed Rizwan</h5>
+                    <p class="card-text">RPA Developer</p>
+                    <a href="#" class="btn btn-primary">Connect</a>
+                  </div>
+                </div>
+                </div>
+          </div>
+          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+              <div class="card" style="width: 18rem;">
+                  <img src="./Men-in-black.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Ugadi Greetings...</h5>
+                    
+                  </div>
+                </div>
+          </div>
+          
+        </div>
+      </div>
+    </div> -->
+
+    <div class="row ">
+      <!-- <div class="card mb-2" *ngFor='let hero of array1'>
+          <div class="card-body" >
+        
+              <div class="d-flex"> <img src="{{hero.file}}" class="rounded-circle" width="60px" height="60px">    <p class="ptag">{{hero.comment|uppercase}}</p></div>
+        
+           <div class="d-flex justify-content-center "> <img src="{{hero.postimg}}" width="40px" height="40px" class="imgstyle"></div>
+           <div class="sty5"><p>{{hero.date}}</p></div>
+           <div class="d-flex justify-content-between likesstyle">
+             <p>{{hero.likes}}Likes</p>
+             <p>comments</p>
+           </div>
+          </div>
+        </div> -->
+  
+        <mat-card class="example-card col-3 m-4" *ngFor='let hero of array1'>
+          <div class="">
+          <mat-card-header>       
+            <img mat-card-avatar class="avatar" src="{{file1}}" >          
+            <!-- <mat-card-title class="mb-1">Asma</mat-card-title>
+            <mat-card-subtitle class=""> </mat-card-subtitle> -->
+          </mat-card-header>
+          <mat-card-content>
+            <p class="font-weight-bolder">
+              {{hero.comment|uppercase}}      
+            </p>
+          </mat-card-content>
+          <img mat-card-image src="{{hero.postimg}}" alt="User" height="190px" width="250px">
+          
+          <mat-card-actions>
+            <button mat-button>{{hero.likes}}LIKE</button>
+            <!-- <button mat-button>SHARE</button> -->
+          </mat-card-actions>
+          </div>
+        </mat-card>
+      </div>
+</div>
