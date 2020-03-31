@@ -36,7 +36,7 @@ export class HomepageComponent implements OnInit,AfterViewInit {
 
   ngOnInit() {
     
-    this._httpclient.get('http://localhost:3001/user/getpostdata').subscribe(
+    this._httpclient.get(' https://backendzic.herokuapp.com/user/getpostdata').subscribe(
       res=>{
         console.log(res);
         this.array=res;
