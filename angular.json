@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "architectui-angular-free:build"
+            "browserTarget": "architectui-angular-free:build:es5"
           }
         },
         "test": {
