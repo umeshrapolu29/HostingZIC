@@ -81,6 +81,10 @@ import { FriendslistComponent } from './DemoPages/Elements/friendslist/friendsli
 import { ViewDetailsBottomsheetComponent } from './DemoPages/Elements/view-details-bottomsheet/view-details-bottomsheet.component';
 import { ChatComponent } from './chat/chat.component';
 import { Viewdetails1Component } from './DemoPages/Elements/viewdetails1/viewdetails1.component';
+import { ExceldataComponent } from './exceldata/exceldata.component';
+import { Messenger1Component } from './messenger1/messenger1.component';
+import { element, elementStart } from '@angular/core/src/render3';
+import { Messenger2Component } from './DemoPages/Elements/messenger2/messenger2.component';
 
 
 
@@ -92,7 +96,12 @@ const routes: Routes = [
 {path:'forgetpassword1',component:Forget1passwordComponent},
 
 {path:'resetpassword',component:ResetpasswordComponent},
+{path:'messenger1',component:Messenger1Component},
 {path:'chat',component:ChatComponent},
+
+
+
+
   {
     path: '',
     component: BaseLayoutComponent,
@@ -136,6 +145,7 @@ const routes: Routes = [
       {path:'elements/viewdetails-bottom',component:ViewDetailsBottomsheetComponent,data:{extraParameter:'elementsmenu'}},
       {path:'elements/viewdetails1',component:Viewdetails1Component,data:{extraParameter:'elementsmenu'}},
       {path:'elements/forgetpassword1',component:ForgetpasswordComponent,data:{extraParameter:'elementsmenu'}},
+      {path:'elements/messenger2',component:Messenger2Component,data:{extraParameter:'elementsmenu'}},
 
 
 

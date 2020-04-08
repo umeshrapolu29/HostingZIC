@@ -160,6 +160,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ChatComponent } from './chat/chat.component';
 
 import { Viewdetails1Component } from './DemoPages/Elements/viewdetails1/viewdetails1.component';
+import { ExceldataComponent } from './exceldata/exceldata.component';
+import { Messenger1Component } from './messenger1/messenger1.component';
+import { Messenger2Component } from './DemoPages/Elements/messenger2/messenger2.component';
 
 
 
@@ -279,7 +282,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FrienddetailsComponent,
     PhotosComponent, 
     ResetpasswordComponent, 
-    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, EditProfileComponent, ChatComponent, Viewdetails1Component, 
+    MessengerComponent, ForgetpasswordComponent, Forget1passwordComponent, FriendslistComponent, EditProfileComponent, ChatComponent, Viewdetails1Component, ExceldataComponent, Messenger1Component, Messenger2Component, 
   ],
   // entryComponents:[ToBottomSheetComponent,MessageBottomSheetComponent,LogoutDialogueComponent],
   imports: [
