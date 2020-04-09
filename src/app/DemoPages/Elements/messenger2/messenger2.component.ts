@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import{AuthService} from '../../../auth.service';
+import { HttpClient ,HttpParams} from '@angular/common/http';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import {  Router } from '@angular/router';
+import { ChatService } from '../../../chat.service';
 @Component({
   selector: 'app-messenger2',
   templateUrl: './messenger2.component.html',
@@ -7,243 +11,186 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Messenger2Component implements OnInit {
 
-  constructor() { }
+  constructor( private auth:AuthService,chatService: ChatService) { }
   true:any;
+  array:any;
+  array1:any;
+  message:String='';
+  messagesdisplay:any;
+  msginput:any;
+  user:any;
+  clearBtn:any;
+  setStatus:any;
+  statusDefault:any;
+  status:any;
+
+  socket:any;
+  
+  msgdata={
+    msg:''
+  }
+
 
   ngOnInit() {
- 
+
     
-    (function () {
-        var element = function (id) {
-            return document.getElementById(id);
+    this.messagesdisplay= document.getElementById('messages')
+    this.msginput=document.getElementById('textarea')
+    this.clearBtn=document.getElementById('clear')
+    this.status=document.getElementById('status')
+
+    console.log(this.messagesdisplay+"msgs is")
+    this.user = localStorage.getItem('username')
+    console.log( this.user+"user name is");
+    this.statusDefault = this.status.textContent;
+    this.setStatus = function (s) {
+        // Set status
+        this.status.textContent = s;
+
+        if (s !== this.statusDefault) {
+            var delay = setTimeout(function () {
+                this.setStatus(this.statusDefault);
+            }, 4000);
         }
+    }
+    
 
-        // Get Elements
-        var status = element('status');
-        var messages = element('messages');
-        var textarea = element('textarea');
-        var username = element('username');
-        var clearBtn = element('clear');
-        console.log(messages,textarea+"values are")
-       
+    this.socket=  io.connect('http://localhost:4000', { query: `user=${localStorage.getItem('username')}` });
+    if (    this.socket !== undefined) {
+        console.log('Connected to socket...');
+        
+        document.getElementById('messages').innerHTML = ''
+        // Handle Output
+        this.socket.on('output', function (data) {
+            console.log(data+"data is");
+            if (data.length) {
+                for (var x = 0; x < data.length; x++) {
+                    // Build out message div
+                    var message = document.createElement('div');
+                    message.setAttribute('class', 'chat-message');
 
-        // sessionStorage.setItem('init', true)
-
-        let urlParam = new URLSearchParams(window.location.search);
-        let user = urlParam.get('user')
-        username.textContent = user;
-
-
-        // let friendsList = document.querySelectorAll('a');
-
-
-
-        // Set default status
-        // var statusDefault = status.textContent;
-
-        // var setStatus = function (s) {
-        //     // Set status
-        //     status.textContent = s;
-
-        //     if (s !== statusDefault) {
-        //         var delay = setTimeout(function () {
-        //             setStatus(statusDefault);
-        //         }, 4000);
-        //     }
-        // }
-
-
-
-        // Connect to socket.io
-        var socket = io.connect('http://localhost:4000', { query: `user=${user}` });
-        console.log(socket+"socket is")
-
-        // Check for connection
-        if (socket !== undefined) {
-            console.log('Connected to socket111...');
-            messages.innerHTML = ''
-            // Handle Output
-            socket.on('output', function (data) {
-                console.log(data+"data is");
-                if (data.length) {
-                    for (var x = 0; x < data.length; x++) {
-                        // Build out message div
-                        var message = document.createElement('div');
-                        message.setAttribute('class', 'chat-message');
-
-                        message.textContent = data[x].name + ": " + data[x].message;
-                        messages.appendChild(message);
-                        messages.insertBefore(message, messages.lastChild);
-                    }
+                    message.textContent = data[x].name + ": " + data[x].message;
+                    document.getElementById('messages').appendChild(message);
+                    document.getElementById('messages').insertBefore(message,  document.getElementById('messages').lastChild);
                 }
-                // sessionStorage.setItem('init', false)
-            });
+            }
+            // sessionStorage.setItem('init', false)
+        });
 
-            // experiment to send data
-
-
-            //Get Status From Server
-            // socket.on('status', function (data) {
-            //     // get message status
-            //     setStatus((typeof data === 'object') ? data.message : data);
-
-            //     // If status is clear, clear text
-            //     if (data.clear) {
-            //         textarea.value = '';
-            //     }
-            // });
-
-            // Handle Input
-            textarea.addEventListener('keydown', function (event) {
-
-                // if (event.which === 13 && event.shiftKey == false) {
-                //     // Emit to server input
-                //     socket.emit('input', {
-                //         user: user,
-                //         friend: localStorage.getItem('friend'),
-                //         message: textarea.value
-                //     });
-                //     event.preventDefault();
-                //     textarea.value = '';
-                //     messages.scrollTo = messages.scrollHeight;
-                // }
-            })
-
-            // Handle Chat Clear
-            clearBtn.addEventListener('click', function () {
-                socket.emit('clear');
-            });
-
-            // Clear Message
-            socket.on('cleared', function () {
-                messages.textContent = '';
-            });
+        // experiment to send data
 
 
+        // Get Status From Server
+        // this.socket.on('status', function (data) {
+        //     // get message status
+        //     setStatus((typeof data === 'object') ? data.message : data);
 
-            // friendsList.forEach(function (friend) {
-            //     friend.addEventListener('click', function (event) {
-            //         event.preventDefault();
-            //         let friend = event.target.dataset.friend;
-            //         localStorage.setItem('friend',friend)
-            //         document.getElementById('online').textContent = friend;
-            //         socket.emit('join', { user: user, friend: friend })
-            //     })
-            // })
-           
-            // socket.on('load', function (data) {
-            //     console.log(data)
-            //     if (data.length) {
-            //         for (var x = 0; x < data.length; x++) {
-            //             // Build out message div
-            //             var message = document.createElement('div');
-            //             message.setAttribute('class', 'chat-message');
+        //     // If status is clear, clear text
+        //     if (data.clear) {
+        //         this.msginput.value = '';
+        //     }
+        // });
 
-            //             message.textContent = data[x].name + ": " + data[x].message;
-            //             messages.appendChild(message);
-            //             messages.insertBefore(message, messages.lastChild);
-            //         }
-            //     }
-            // })
-        }
-        // socket.on('message',function(data){
-        //     console.log(data)
+        // Handle Input
+        // this.msginput.addEventListener('keydown', function (event) {
 
-        //     var message = document.createElement('div');
-        //      message.setAttribute('class', 'chat-message');
-        //      message.textContent = data.user + ": " + data.message;
-        //      messages.appendChild(message);
-        //      messages.insertBefore(message, messages.lastChild);
-            
+        //     if (event.which === 13 && event.shiftKey == false) {
+        //         // Emit to server input
+        //         this.socket.emit('input', {
+        //             user: this.user,
+        //             friend: localStorage.getItem('friend'),
+        //             message: this.msginput.value
+        //         });
+        //         event.preventDefault();
+        //         this.msginput.value = '';
+        //         this.messagesdisplay.scrollTo = this.messagesdisplay.scrollHeight;
+        //     }
         // })
-    })();
-  //   (function(){
-  //     var element = function(id){
-  //         return document.getElementById(id);
-  //     }
 
-  //     // Get Elements
-  //     var status = element('status');
-  //     var messages = element('messages');
-  //     var textarea = element('textarea');
-  //     var username = element('username');
-  //     var clearBtn = element('clear');
+        // Handle Chat Clear
+        this.clearBtn.addEventListener('click', function () {
+            this.socket.emit('clear');
+        });
 
-  //     // Set default status
-  //     // var statusDefault = status.textContent;
-  //     //        let urlParam = new URLSearchParams(window.location.search);
-  //     //    let user = urlParam.get('user')
-  //     //    username.textContent = user;
+        // Clear Message
+        this.socket.on('cleared', function () {
+            this.messagesdisplay.textContent = '';
+        });
 
-  //     // var setStatus = function(s){
-  //     //     // Set status
-  //     //     status.textContent = s;
 
-  //     //     if(s !== statusDefault){
-  //     //         var delay = setTimeout(function(){
-  //     //             setStatus(statusDefault);
-  //     //         }, 4000);
-  //     //     }
-  //     // }
 
-  //     // Connect to socket.io
-  //     var socket = io.connect('http://localhost:4000');
+        // this.socket.forEach(function (friend) {
+        //     friend.addEventListener('click', function (event) {
+        //         event.preventDefault();
+        //         let friend = event.target.dataset.friend;
+        //         localStorage.setItem('friend',friend)
+        //         document.getElementById('online').textContent = friend;
+        //         this.socket.emit('join', { user: this.user, friend: friend })
+        //     })
+        // })
+       
+        this.socket.on('load', function (data) {
+            console.log(data)
+          
+            if (data.length) {
+                for (var x = 0; x < data.length; x++) {
+                    // Build out message div
+                    var message = document.createElement('div');
+                    message.setAttribute('class', 'chat-message');
 
-  //     // Check for connection
-  //     if(socket !== undefined){
-  //         console.log('Connected to socket...');
+                    message.textContent = data[x].name + ": " + data[x].message;
+                    document.getElementById('messages').appendChild(message);
+                    document.getElementById('messages').insertBefore(message, document.getElementById('messages').lastChild);
+                }
+            }
+        })
+    }
 
-  //         // // Handle Output
-  //         // socket.on('output', function(data){
-  //         //     //console.log(data);
-  //         //     if(data.length){
-  //         //         for(var x = 0;x < data.length;x++){
-  //         //             // Build out message div
-  //         //             var message = document.createElement('div');
-  //         //             message.setAttribute('class', 'chat-message');
-  //         //             message.textContent = data[x].name+": "+data[x].message;
-  //         //             messages.appendChild(message);
-  //         //             messages.insertBefore(message, messages.firstChild);
-  //         //         }
-  //         //     }
-  //         // });
 
-  //         // // Get Status From Server
-  //         // socket.on('status', function(data){
-  //         //     // get message status
-  //         //     setStatus((typeof data === 'object')? data.message : data);
+    
 
-  //         //     // If status is clear, clear text
-  //         //     if(data.clear){
-  //         //         textarea.value = '';
-  //         //     }
-  //         // });
 
-  //         // // Handle Input
-  //         // textarea.addEventListener('keydown', function(event){
-  //         //     if(event.which === 13 && event.shiftKey == false){
-  //         //         // Emit to server input
-  //         //         socket.emit('input', {
-  //         //             name:username.value,
-  //         //             message:textarea.value
-  //         //         });
 
-  //         //         event.preventDefault();
-  //         //     }
-  //         // })
+    
 
-  //         // // Handle Chat Clear
-  //         // clearBtn.addEventListener('click', function(){
-  //         //     socket.emit('clear');
-  //         // });
+    const payload2 = new FormData();
+    payload2.append('id',localStorage.getItem('id'));
+    console.log(localStorage.getItem('id')+"id is")
+    this.auth.getusernames(payload2).subscribe(res=>{
+      console.log(res +"is");
+        this.array=res;
+      
+        this.array1=this.array.data
+        console.log(this.array1)
+  
+  })
+}
+logMessageId(el){
+    console.log(this.message);
+    let messageId = el.getAttribute('data-message-id');
+    //let messageId = el.dataset.messageId;
+    console.log("Message Id: ", messageId);
+    localStorage.setItem('friend',messageId)
+    document.getElementById('online').textContent = localStorage.getItem('friend');
+    console.log(this.socket+"socket is")
+    let friend = localStorage.getItem('friend');
 
-  //         // // Clear Message
-  //         // socket.on('cleared', function(){
-  //         //     messages.textContent = '';
-  //         // });
-  //     }
+    document.getElementById('online').textContent = friend;
+    this.socket.emit('join', { user: this.user, friend: friend })
+    document.getElementById('messages').innerHTML = ''
+}
+sendmessage(){
+    // console.log("In side function");
+    // console.log(this.msgdata.msg)
+    this.socket.emit('input', {
+        user: localStorage.getItem('username'),
+        friend: localStorage.getItem('friend'),
+        message: document.getElementById('textarea').value
+    });
+    event.preventDefault();
+    document.getElementById('textarea').value = '';
+    // document.getElementById('messages').scrollTo = document.getElementById('messages').scrollHeight;
 
-  // })
+}
 
-  }
 }
