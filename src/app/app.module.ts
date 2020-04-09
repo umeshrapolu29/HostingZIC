@@ -163,6 +163,7 @@ import { Viewdetails1Component } from './DemoPages/Elements/viewdetails1/viewdet
 import { ExceldataComponent } from './exceldata/exceldata.component';
 import { Messenger1Component } from './messenger1/messenger1.component';
 import { Messenger2Component } from './DemoPages/Elements/messenger2/messenger2.component';
+import { ChatService } from './chat.service';
 
 
 
@@ -324,7 +325,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     ChartModule,
     NgCircleProgressModule.forRoot()
   ],
-  providers: [
+  providers: [ChatService,
     {
       provide:
       PERFECT_SCROLLBAR_CONFIG,

@@ -1,4 +1,4 @@
-<body>
+
   <div class="container">
       <div class="row d-flex">
           <div class="col-md-6 offset-md-3 col-sm-12">
@@ -8,8 +8,8 @@
               </h1>
               <div id="status"></div>
               <div id="chat">
-                  <!-- <input type="text" id="username" class="form-control" placeholder="Enter name..."> 
-                                       -->
+                  
+                                       
                   <div class="d-flex justify-content-between">
                       <h5>User - <span id="username"></span></h5>
                       <h5>Friend - <span id="online"></span></h5>
@@ -23,21 +23,55 @@
                       </div>
                   </div>
                   <br>
-                  <textarea id="textarea" class="form-control" placeholder="Enter message..."></textarea>
+                  <textarea id="textarea" class="form-control" name="msg"  [(ngModel)]="msgdata.msg" (keyup.enter)="sendmessage()"placeholder="Enter message..."></textarea>
               </div>
           </div>
-          <div class="col-md-3 users align-self-center">
-              <ul>
-                  <li><a href="" data-friend="umesh">umesh</a></li>
-                  <li><a href="" data-friend="pavan">pavan</a></li>
-                  <li><a href="" data-friend="sandeep">sandeep</a></li>
-                  <li><a href="" data-friend="prathusha">prathusha</a></li>
-              </ul>
+          <div class="col-md-3 users align-self-center"  >
+            <!-- <ul >
+                <li><a href="" data-friend="umesh">umesh</a></li>
+                <li><a href="" data-friend="pavan">pavan</a></li>
+                <li><a href="" data-friend="sandeep">sandeep</a></li>
+                <li><a href="" data-friend="prathusha">prathusha</a></li>
+            </ul> -->
+              <!-- <ul *ngFor="let hero of array1" >
+
+               
+                <li #messageEl  [attr.data-message]="hero.username">
+               
+                  <a   href="">   {{ hero.username }} </a>
+                </li>
+              </ul> -->
+              <li #messageEl *ngFor="let hero of array1" [attr.data-message-id]="hero.username">
+               
+                <br><a (click)="logMessageId(messageEl)">{{ hero.username }} </a>
+              </li>
           </div>
       </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+  
 
  
-</body> 
+
+ <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3 col-sm-12">
+                <h1 class="text-center">
+                    MongoChat 
+                    <button id="clear" class="btn btn-danger">Clear</button>
+                </h1>
+                <div id="status"></div>
+                <div id="chat">
+                    <input type="text" id="username" class="form-control" placeholder="Enter name...">
+                    <br>
+                    <div class="card">
+                        <div id="messages" class="card-block">
+
+                        </div>
+                    </div>
+                    <br>
+                    <textarea id="textarea" class="form-control" placeholder="Enter message..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div> -->
