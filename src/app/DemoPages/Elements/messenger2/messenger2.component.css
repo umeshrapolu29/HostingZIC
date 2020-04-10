@@ -21,3 +21,26 @@ ul li {
 ul li a {
     font-size: 1.5rem;
 }
+.background{
+    width: 73px;
+    height: 71px;
+    margin: 7px
+}
+.ancstyle{
+    margin-top: 19px;
+    font-size: 25px;
+    margin-left: -24px;
+}
+.card-block{
+    padding: 14px;
+}
+.chat-message{
+    margin: 10px;
+}
+.h1style{
+    margin-top: 10px;
+}
+.spanstyle{
+    font-weight: 500;
+    font-size: 1.8rem;
+}

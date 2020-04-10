@@ -3,7 +3,7 @@ import{AuthService} from '../../../auth.service';
 import { HttpClient ,HttpParams} from '@angular/common/http';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import {  Router } from '@angular/router';
-import { ChatService } from '../../../chat.service';
+// import { ChatService } from '../../../chat.service';
 @Component({
   selector: 'app-messenger2',
   templateUrl: './messenger2.component.html',
@@ -11,7 +11,7 @@ import { ChatService } from '../../../chat.service';
 })
 export class Messenger2Component implements OnInit {
 
-  constructor( private auth:AuthService,chatService: ChatService) { }
+  constructor( private auth:AuthService) { }
   true:any;
   array:any;
   array1:any;
@@ -23,15 +23,41 @@ export class Messenger2Component implements OnInit {
   setStatus:any;
   statusDefault:any;
   status:any;
+  delay:any;
+  inputmessages:any;
+  username:any;
 
   socket:any;
   
   msgdata={
     msg:''
   }
+  persons = [
+    {
+      "name": "Mike",
+      "colors": [
+        {"name": "blue"},
+        {"name": "white"}
+      ]
+    },
+  
+    {
+      "name": "Phoebe",
+      "colors": [
+        {"name": "red"},
+        {"name": "yellow"}
+      ]
+    }
+    ];
 
+    
+  
 
   ngOnInit() {
+
+
+    this.inputmessages=this.persons
+    console.log(this.inputmessages.names+"rray is")
 
     
     this.messagesdisplay= document.getElementById('messages')
@@ -42,54 +68,66 @@ export class Messenger2Component implements OnInit {
     console.log(this.messagesdisplay+"msgs is")
     this.user = localStorage.getItem('username')
     console.log( this.user+"user name is");
-    this.statusDefault = this.status.textContent;
-    this.setStatus = function (s) {
-        // Set status
-        this.status.textContent = s;
+    // this.statusDefault = this.status.textContent;
+    // this.setStatus = function (s) {
+    //     // Set status
+    //     this.status.textContent = s;
 
-        if (s !== this.statusDefault) {
-            var delay = setTimeout(function () {
-                this.setStatus(this.statusDefault);
-            }, 4000);
-        }
-    }
-    
+    //     if (s !== this.statusDefault) {
+    //         this.delay = setTimeout(function () {
+    //             this.setStatus(this.statusDefault);
+    //         }, 4000);
+    //     }
+    // }
+    var statusDefault = document.getElementById('status').textContent;
 
-    this.socket=  io.connect('http://localhost:4000', { query: `user=${localStorage.getItem('username')}` });
+            var setStatus = function (s) {
+                // Set status
+                document.getElementById('status').textContent = s;
+
+                if (s !== statusDefault) {
+                    var delay = setTimeout(function () {
+                        setStatus(statusDefault);
+                    }, 4000);
+                }
+            }
+    console.log(this.setStatus +"setstatus is")
+
+    this.socket=  io.connect('https://zicchatbackend.herokuapp.com', { query: `user=${localStorage.getItem('username')}` });
     if (    this.socket !== undefined) {
         console.log('Connected to socket...');
         
-        document.getElementById('messages').innerHTML = ''
+        // document.getElementById('messages').innerHTML = ''
         // Handle Output
-        this.socket.on('output', function (data) {
-            console.log(data+"data is");
-            if (data.length) {
-                for (var x = 0; x < data.length; x++) {
-                    // Build out message div
-                    var message = document.createElement('div');
-                    message.setAttribute('class', 'chat-message');
+        // this.socket.on('message', function (data) {
+        //     console.log(data+"data is");
+        //     if (data.length) {
+        //         for (var x = 0; x < data.length; x++) {
+        //             // Build out message div
+        //             var message = document.createElement('div');
+        //             message.setAttribute('class', 'chat-message');
 
-                    message.textContent = data[x].name + ": " + data[x].message;
-                    document.getElementById('messages').appendChild(message);
-                    document.getElementById('messages').insertBefore(message,  document.getElementById('messages').lastChild);
-                }
-            }
-            // sessionStorage.setItem('init', false)
-        });
+        //             message.textContent = data[x].name + ": " + data[x].message;
+        //             document.getElementById('messages').appendChild(message);
+        //             document.getElementById('messages').insertBefore(message,  document.getElementById('messages').lastChild);
+        //         }
+        //     }
+        //     // sessionStorage.setItem('init', false)
+        // });
 
         // experiment to send data
 
 
-        // Get Status From Server
-        // this.socket.on('status', function (data) {
-        //     // get message status
-        //     setStatus((typeof data === 'object') ? data.message : data);
+        //Get Status From Server
+        this.socket.on('status', function (data) {
+            // get message status
+            setStatus((typeof data === 'object') ? data.message : data);
 
-        //     // If status is clear, clear text
-        //     if (data.clear) {
-        //         this.msginput.value = '';
-        //     }
-        // });
+            // If status is clear, clear text
+            if (data.clear) {
+                (<HTMLInputElement>document.getElementById('textarea')).value = '';
+            }
+        });
 
         // Handle Input
         // this.msginput.addEventListener('keydown', function (event) {
@@ -108,9 +146,9 @@ export class Messenger2Component implements OnInit {
         // })
 
         // Handle Chat Clear
-        this.clearBtn.addEventListener('click', function () {
-            this.socket.emit('clear');
-        });
+        // this.clearBtn.addEventListener('click', function () {
+        //     this.socket.emit('clear');
+        // });
 
         // Clear Message
         this.socket.on('cleared', function () {
@@ -144,6 +182,24 @@ export class Messenger2Component implements OnInit {
                 }
             }
         })
+        this.socket.on('message',function(data){
+            console.log(data+"data is message")
+
+            this.inputmessages=data;
+            console.log( this.inputmessages+"msg isss")
+
+            console.log("inside on message")
+
+//            let html = `<div class='chat-message'>${data.user} : ${data.message}</div>`
+  //          console.log(messages)
+            var message = document.createElement('div');
+             message.setAttribute('class', 'chat-message2');
+             message.textContent = data.user + ": " + data.message;
+             document.getElementById('messages').appendChild(message);
+             console.log(message+"message is")
+            //  document.getElementById('messages').insertBefore(message, document.getElementById('messages').lastChild);
+            
+        })
     }
 
 
@@ -167,28 +223,48 @@ export class Messenger2Component implements OnInit {
 }
 logMessageId(el){
     console.log(this.message);
+    document.getElementById('messages').innerHTML = ''
     let messageId = el.getAttribute('data-message-id');
     //let messageId = el.dataset.messageId;
     console.log("Message Id: ", messageId);
     localStorage.setItem('friend',messageId)
     document.getElementById('online').textContent = localStorage.getItem('friend');
+    // document.getElementById('username').textContent = localStorage.getItem('username');
     console.log(this.socket+"socket is")
     let friend = localStorage.getItem('friend');
 
     document.getElementById('online').textContent = friend;
     this.socket.emit('join', { user: this.user, friend: friend })
-    document.getElementById('messages').innerHTML = ''
+
 }
 sendmessage(){
-    // console.log("In side function");
+     console.log("In side function");
     // console.log(this.msgdata.msg)
     this.socket.emit('input', {
         user: localStorage.getItem('username'),
         friend: localStorage.getItem('friend'),
-        message: document.getElementById('textarea').value
+        // message: document.getElementById('textarea').value
+        message: this.msgdata.msg
     });
     event.preventDefault();
-    document.getElementById('textarea').value = '';
+    console.log("out side input function");
+
+    // this.socket.on('output', function (data) {
+    //     console.log(data+"data is");
+    //     if (data.length) {
+    //         for (var x = 0; x < data.length; x++) {
+    //             // Build out message div
+    //             var message = document.createElement('div');
+    //             message.setAttribute('class', 'chat-message');
+
+    //             message.textContent = data[x].name + ": " + data[x].message;
+    //             document.getElementById('messages').appendChild(message);
+    //             document.getElementById('messages').insertBefore(message,  document.getElementById('messages').lastChild);
+    //         }
+    //     }
+        // sessionStorage.setItem('init', false)
+
+    // document.getElementById('textarea').value = '';
     // document.getElementById('messages').scrollTo = document.getElementById('messages').scrollHeight;
 
 }
