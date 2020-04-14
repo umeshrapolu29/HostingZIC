@@ -68,6 +68,7 @@ export class HomepageComponent implements OnInit,AfterViewInit {
 
   }
   ngAfterViewInit(){
+    
     console.log(this.p1.nativeElement );
     this.p1.nativeElement.style.color='red';
   }
@@ -149,11 +150,15 @@ export class HomepageComponent implements OnInit,AfterViewInit {
 
 
    }
+  //  @ViewChild('id2') p2:ElementRef;
+
    comment(selected:any){
+
      console.log("comment");
      console.log("Selected item Id: ", selected._id);
-     console.log(this.p2.nativeElement );
-     var x=this.p2.nativeElement;
+    //  console.log(this.p2.nativeElement );
+
+     var x=document.getElementById(selected._id);
      console.log(x)
      if (x.style.display ==="none") {
       x.style.display = "block";
